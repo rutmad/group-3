@@ -14,7 +14,6 @@ function startParking() {
     var selectedCity = citySelect.value;
     var vehicleNumber = vehicleNumberInput.value;
     if (selectedCity && vehicleNumber) {
-        // Disable city selection and vehicle number input
         citySelect.disabled = true;
         vehicleNumberInput.disabled = true;
         // Enable end parking button
@@ -31,7 +30,6 @@ function startParking() {
 }
 // End parking
 function endParking() {
-    // Enable city selection and vehicle number input
     citySelect.disabled = false;
     vehicleNumberInput.disabled = false;
     // Disable end parking button
