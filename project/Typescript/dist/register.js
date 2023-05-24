@@ -1,3 +1,4 @@
+////////////////////////////page-2//////////////////////////////////////////
 var UserData = /** @class */ (function () {
     function UserData(uid, userName, password, address, licensePlate, creditCard) {
         this.uid = uid;
@@ -11,6 +12,7 @@ var UserData = /** @class */ (function () {
 }());
 var userData = [];
 function addUser(event) {
+    //Pushing font results to the userData array
     event.preventDefault();
     var userNameInput = document.getElementById("user-name");
     var passwordInput = document.getElementById("password");
@@ -26,10 +28,14 @@ function addUser(event) {
         creditCard: Number(creditCardInput.value)
     };
     userData.push(newUserData);
-    console.log(userData);
+    localStorage.setItem("userData", JSON.stringify(userData));
 }
-var form = document.getElementById("form");
-form.addEventListener("submit", addUser);
+var frm = document.getElementById("form");
+frm.addEventListener("submit", addUser);
+var storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+    userData = JSON.parse(storedUserData);
+}
 ////////////////////////////page-4//////////////////////////////////////////
 // const citySelect = document.getElementById("city") as HTMLSelectElement;
 // const vehicleNumberInput = document.getElementById(
