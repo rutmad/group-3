@@ -32,12 +32,20 @@ var ParkingController = /** @class */ (function () {
         this.parkingView.timerDisplay.parentElement.hidden = true;
         this.timerModel.stopTimer();
         var totalTime = this.timerModel.getSecondsElapsed();
-        window.location.href =
-            "parkingSummary.html" +
-                "?cost=" +
-                totalTime * 0.01 +
-                "&time=" +
-                totalTime;
+        this.displayParkingSummary(totalTime);
+    };
+    ParkingController.prototype.displayParkingSummary = function (totalTime, totalCost) {
+        totalCost = totalTime * 0.01;
+        this.parkingView.showPage("page4");
+        var costElement = document.getElementById("cost");
+        var timeElement = document.getElementById("time");
+        costElement.textContent = "Total cost: $" + totalCost.toFixed(2);
+        timeElement.textContent =
+            "Time in the parking lot: " + totalTime + " seconds";
+        this.timerModel.resetTimer();
+        this.parkingView.enableCitySelect();
+        this.parkingView.enableVehicleNumberInput();
+        this.parkingView.disableEndParkingButton();
     };
     ParkingController.prototype.updateTimer = function () {
         var _this = this;
@@ -46,16 +54,6 @@ var ParkingController = /** @class */ (function () {
         setTimeout(function () {
             _this.updateTimer();
         }, 1000);
-    };
-    ParkingController.prototype.displayParkingSummary = function () {
-        var urlParams = new URLSearchParams(window.location.search);
-        var totalCost = urlParams.get("cost");
-        var totalTime = urlParams.get("time");
-        var costElement = document.querySelector(".parking__cost");
-        var timeElement = document.querySelector(".parking__time");
-        costElement.textContent = "Total cost: $" + totalCost;
-        timeElement.textContent =
-            "Time in the parking lot: " + totalTime + " hours";
     };
     return ParkingController;
 }());

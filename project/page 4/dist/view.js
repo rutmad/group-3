@@ -56,5 +56,16 @@ var ParkingView = /** @class */ (function () {
     ParkingView.prototype.getVehicleNumber = function () {
         return this.vehicleNumberInput.value;
     };
+    ParkingView.prototype.showPage = function (pageId) {
+        var pages = document.querySelectorAll(".page");
+        pages.forEach(function (page) {
+            if (page.id === pageId) {
+                page.style.display = "block";
+            }
+            else {
+                page.style.display = "none";
+            }
+        });
+    };
     return ParkingView;
 }());
