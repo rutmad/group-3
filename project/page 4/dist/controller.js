@@ -32,7 +32,7 @@ var ParkingController = /** @class */ (function () {
         this.parkingView.timerDisplay.parentElement.hidden = true;
         this.timerModel.stopTimer();
         var totalTime = this.timerModel.getSecondsElapsed();
-        this.displayParkingSummary(totalTime);
+        this.displayParkingSummary(totalTime, "");
     };
     ParkingController.prototype.displayParkingSummary = function (totalTime, totalCost) {
         totalCost = totalTime * 0.01;

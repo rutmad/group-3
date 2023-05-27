@@ -41,13 +41,13 @@ class ParkingController {
     this.parkingView.citySelect.disabled = false;
     this.parkingView.vehicleNumberInput.disabled = false;
     this.parkingView.endParkingButton.disabled = true;
-    this.parkingView.timerDisplay.parentElement.hidden = true;
+    this.parkingView.timerDisplay.parentElement!.hidden = true;
 
     this.timerModel.stopTimer();
 
     const totalTime = this.timerModel.getSecondsElapsed();
 
-    this.displayParkingSummary(totalTime);
+    this.displayParkingSummary(totalTime, "");
   }
 
   displayParkingSummary(totalTime, totalCost) {
