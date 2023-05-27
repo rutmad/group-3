@@ -40,8 +40,7 @@ var ParkingController = /** @class */ (function () {
         var costElement = document.getElementById("cost");
         var timeElement = document.getElementById("time");
         costElement.textContent = "Total cost: $" + totalCost.toFixed(2);
-        timeElement.textContent =
-            "Time in the parking lot: " + totalTime + " seconds";
+        timeElement.textContent = totalTime + " seconds";
         this.timerModel.resetTimer();
         this.parkingView.enableCitySelect();
         this.parkingView.enableVehicleNumberInput();
