@@ -1,3 +1,10 @@
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 var UserData = /** @class */ (function () {
     function UserData(uid, userName, password, address, licensePlate, creditCard) {
         this.uid = uid;
@@ -9,7 +16,9 @@ var UserData = /** @class */ (function () {
     }
     return UserData;
 }());
-var userData = [];
+//try to get users data from the localstorage. else return []
+var currentData = JSON.parse(localStorage.getItem("users") || "[]");
+var userData = __spreadArrays(currentData);
 function addUser(event) {
     event.preventDefault();
     var userNameInput = document.getElementById("user-name");
@@ -26,6 +35,7 @@ function addUser(event) {
         creditCard: Number(creditCardInput.value)
     };
     userData.push(newUserData);
+    localStorage.setItem("users", JSON.stringify(userData));
     console.log(userData);
 }
 var form = document.getElementById("form");

@@ -96,9 +96,6 @@ body {
   transition: height 0.2s ease;
 }
 
-.wrapper.active {
-}
-
 .wrapper .form-box {
   width: 100%;
   padding: 40px;

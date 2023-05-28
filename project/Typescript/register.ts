@@ -9,7 +9,9 @@ class UserData {
   ) {}
 }
 
-const userData: UserData[] = [];
+//try to get users data from the localstorage. else return []
+const currentData = JSON.parse(localStorage.getItem("users") || "[]");
+const userData: UserData[] = [...currentData];
 
 function addUser(event: Event) {
   event.preventDefault();
@@ -34,6 +36,7 @@ function addUser(event: Event) {
     creditCard: Number(creditCardInput.value),
   };
   userData.push(newUserData);
+  localStorage.setItem("users", JSON.stringify(userData));
   console.log(userData);
 }
 
