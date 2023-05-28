@@ -26,6 +26,7 @@ function startParking() {
   const vehicleNumber = vehicleNumberInput.value;
 
   if (selectedCity && vehicleNumber) {
+    // Disable city selection and vehicle number input
     citySelect.disabled = true;
     vehicleNumberInput.disabled = true;
 
@@ -46,6 +47,7 @@ function startParking() {
 
 // End parking
 function endParking() {
+  // Enable city selection and vehicle number input
   citySelect.disabled = false;
   vehicleNumberInput.disabled = false;
 

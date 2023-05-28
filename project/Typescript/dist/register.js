@@ -5,6 +5,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
+////////////////////////////page-2//////////////////////////////////////////
 var UserData = /** @class */ (function () {
     function UserData(uid, userName, password, address, licensePlate, creditCard) {
         this.uid = uid;
@@ -20,6 +21,7 @@ var UserData = /** @class */ (function () {
 var currentData = JSON.parse(localStorage.getItem("users") || "[]");
 var userData = __spreadArrays(currentData);
 function addUser(event) {
+    //Pushing font results to the userData array
     event.preventDefault();
     var userNameInput = document.getElementById("user-name");
     var passwordInput = document.getElementById("password");
@@ -38,8 +40,12 @@ function addUser(event) {
     localStorage.setItem("users", JSON.stringify(userData));
     console.log(userData);
 }
-var form = document.getElementById("form");
-form.addEventListener("submit", addUser);
+var frm = document.getElementById("form");
+frm.addEventListener("submit", addUser);
+var storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+    userData = JSON.parse(storedUserData);
+}
 ////////////////////////////page-4//////////////////////////////////////////
 // const citySelect = document.getElementById("city") as HTMLSelectElement;
 // const vehicleNumberInput = document.getElementById(

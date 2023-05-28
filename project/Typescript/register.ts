@@ -1,3 +1,4 @@
+////////////////////////////page-2//////////////////////////////////////////
 class UserData {
   constructor(
     public uid: number,
@@ -14,6 +15,7 @@ const currentData = JSON.parse(localStorage.getItem("users") || "[]");
 const userData: UserData[] = [...currentData];
 
 function addUser(event: Event) {
+  //Pushing font results to the userData array
   event.preventDefault();
   const userNameInput = document.getElementById(
     "user-name"
@@ -40,8 +42,13 @@ function addUser(event: Event) {
   console.log(userData);
 }
 
-const form = document.getElementById("form") as HTMLFormElement;
-form.addEventListener("submit", addUser);
+const frm = document.getElementById("form") as HTMLFormElement;
+frm.addEventListener("submit", addUser);
+
+const storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+  userData = JSON.parse(storedUserData);
+}
 
 ////////////////////////////page-4//////////////////////////////////////////
 

@@ -1,24 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <html>
-      <head>
-        <meta charset="UTF-8" />
-        <title>Parking is over</title>
-      </head>
-      <body>
-        <div class="parking">
-          <h1 class="parking__title">Parking is over</h1>
-          <div class="parking__cost">Total cost: $XX</div>
-          <div class="parking__time">Time in the parking lot: XX hours</div>
-          <div class="parking__location">Where was the parking: XXX</div>
-        </div>
-      </body>
-    </html>
-    <!DOCTYPE html>
+    <title>Parking</title>
+    <script src="./dist/parking.js" defer></script>
+    <link rel="stylesheet" href="./dist/style.css" />
+    <script src="./dist/model.js" defer></script>
+    <script src="./dist/controller.js" defer></script>
+    <script src="./dist/view.js" defer></script>
+    <script src="./dist/index.js" defer></script>
   </head>
+  <body>
+    <div id="page3" class="page">
+      <h1 class="logo">Parking</h1>
+      <div class="city-selection">
+        <label for="city">Select City:</label>
+        <select id="city">
+          <option value="" disabled selected></option>
+          <option value="1">Rishon Lezion</option>
+          <option value="2">Bat Yam</option>
+          <option value="3">Jerusalem</option>
+          <option value="4">Tel Aviv</option>
+          <option value="5">Petah Tikva</option>
+          <option value="6">Holon</option>
+          <option value="7">Nahariya</option>
+          <option value="8">Rehovot</option>
+          <option value="9">Yavne</option>
+          <option value="10">Modyin</option>
+        </select>
+      </div>
+      <div class="vehicle-number">
+        <label for="number">Vehicle Number:</label>
+        <input type="text" id="number" />
+      </div>
+      <div class="parking-buttons">
+        <button id="start-parking">Start Parking</button>
+        <button id="end-parking" disabled>End Parking</button>
+      </div>
+      <div class="timer" hidden>
+        <p id="timer-label">Time elapsed:</p>
+        <p id="timer">0 seconds</p>
+      </div>
+    </div>
+    <div id="page4" class="page" style="display: none">
+      <h1>Parking Summary</h1>
+      <div class="parking-info">
+        <p>Cost: <span id="cost"></span></p>
+        <p>Time in the parking lot: <span id="time"></span></p>
+      </div>
+    </div>
+  </body>
 </html>
