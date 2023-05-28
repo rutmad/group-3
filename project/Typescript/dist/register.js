@@ -46,7 +46,11 @@ var storedUserData = localStorage.getItem("userData");
 if (storedUserData) {
     userData = JSON.parse(storedUserData);
 }
-////////////////////////////page-4//////////////////////////////////////////
+var btn = document.getElementById("register_button");
+btn.addEventListener("click", function () {
+    window.location.href = "../page 1 login/login.html";
+});
+////////////////////////////page-3//////////////////////////////////////////
 // const citySelect = document.getElementById("city") as HTMLSelectElement;
 // const vehicleNumberInput = document.getElementById(
 //   "number"
