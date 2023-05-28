@@ -1,56 +1,59 @@
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-////////////////////////////page-2//////////////////////////////////////////
-var UserData = /** @class */ (function () {
-    function UserData(uid, userName, password, address, licensePlate, creditCard) {
-        this.uid = uid;
-        this.userName = userName;
-        this.password = password;
-        this.address = address;
-        this.licensePlate = licensePlate;
-        this.creditCard = creditCard;
+"use strict";
+
+var __spreadArrays = void 0 && (void 0).__spreadArrays || function () {
+  for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+    s += arguments[i].length;
+  }
+
+  for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+    for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+      r[k] = a[j];
     }
-    return UserData;
-}());
-//try to get users data from the localstorage. else return []
+  }
+
+  return r;
+};
+
+var UserData =
+/** @class */
+function () {
+  function UserData(uid, userName, password, address, licensePlate, creditCard) {
+    this.uid = uid;
+    this.userName = userName;
+    this.password = password;
+    this.address = address;
+    this.licensePlate = licensePlate;
+    this.creditCard = creditCard;
+  }
+
+  return UserData;
+}(); //try to get users data from the localstorage. else return []
+
+
 var currentData = JSON.parse(localStorage.getItem("users") || "[]");
+
 var userData = __spreadArrays(currentData);
+
 function addUser(event) {
-    //Pushing font results to the userData array
-    event.preventDefault();
-    var userNameInput = document.getElementById("user-name");
-    var passwordInput = document.getElementById("password");
-    var addressInput = document.getElementById("address");
-    var licensePlateInput = document.getElementById("license-plate-number");
-    var creditCardInput = document.getElementById("credit-card");
-    var newUserData = {
-        uid: Math.floor(Math.random() * 10000),
-        userName: userNameInput.value,
-        password: passwordInput.value,
-        address: addressInput.value,
-        licensePlate: Number(licensePlateInput.value),
-        creditCard: Number(creditCardInput.value)
-    };
-    userData.push(newUserData);
-    localStorage.setItem("users", JSON.stringify(userData));
-    console.log(userData);
-}
-var frm = document.getElementById("form");
-frm.addEventListener("submit", addUser);
-var storedUserData = localStorage.getItem("userData");
-if (storedUserData) {
-    userData = JSON.parse(storedUserData);
-}
-var btn = document.getElementById("register_button");
-btn.addEventListener("click", function () {
-    window.location.href = "../page 1 login/login.html";
-});
-////////////////////////////page-3//////////////////////////////////////////
+  //Pushing font results to the userData array
+  event.preventDefault();
+  var userNameInput = document.getElementById("user-name");
+  var passwordInput = document.getElementById("password");
+  var addressInput = document.getElementById("address");
+  var licensePlateInput = document.getElementById("license-plate-number");
+  var creditCardInput = document.getElementById("credit-card");
+  var newUserData = {
+    uid: Math.floor(Math.random() * 10000),
+    userName: userNameInput.value,
+    password: passwordInput.value,
+    address: addressInput.value,
+    licensePlate: Number(licensePlateInput.value),
+    creditCard: Number(creditCardInput.value)
+  };
+  userData.push(newUserData);
+  localStorage.setItem("users", JSON.stringify(userData));
+  console.log(userData);
+} ////////////////////////////page-4//////////////////////////////////////////
 // const citySelect = document.getElementById("city") as HTMLSelectElement;
 // const vehicleNumberInput = document.getElementById(
 //   "number"
