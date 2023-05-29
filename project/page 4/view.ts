@@ -1,3 +1,10 @@
+/////////////////////////////register//////////////////////////////////////////////
+const storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+  userData = JSON.parse(storedUserData);
+}
+////////////////////////////////////////////////////////////////////////////////////
+
 class TimerView {
   private timerLabel: HTMLParagraphElement;
   private timerDisplay: HTMLParagraphElement;

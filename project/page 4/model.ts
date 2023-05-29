@@ -1,3 +1,18 @@
+//////////////////////////Register///////////////////////////////////
+class UserData {
+  constructor(
+    public uid: number,
+    public userName: string,
+    public password: string,
+    public address: string,
+    public licensePlate: number,
+    public creditCard: number
+  ) {}
+}
+
+let userData: UserData[] = [];
+///////////////////////////////////////////////////////////////////////////////
+
 class TimerModel {
   private seconds: number;
   private timer: number;

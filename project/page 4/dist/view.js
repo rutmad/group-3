@@ -1,3 +1,9 @@
+/////////////////////////////register//////////////////////////////////////////////
+var storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+    userData = JSON.parse(storedUserData);
+}
+////////////////////////////////////////////////////////////////////////////////////
 var TimerView = /** @class */ (function () {
     function TimerView() {
         this.timerLabel = document.getElementById("timer-label");

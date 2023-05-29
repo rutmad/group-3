@@ -1,56 +1,56 @@
 ////////////////////////////page-2//////////////////////////////////////////
-class UserData {
-  constructor(
-    public uid: number,
-    public userName: string,
-    public password: string,
-    public address: string,
-    public licensePlate: number,
-    public creditCard: number
-  ) {}
-}
+// class UserData {
+//   constructor(
+//     public uid: number,
+//     public userName: string,
+//     public password: string,
+//     public address: string,
+//     public licensePlate: number,
+//     public creditCard: number
+//   ) {}
+// }
 
-const userData: UserData[] = [];
+// const userData: UserData[] = [];
 
-function addUser(event: Event) {
-  //Pushing font results to the userData array
-  event.preventDefault();
-  const userNameInput = document.getElementById(
-    "user-name"
-  ) as HTMLInputElement;
-  const passwordInput = document.getElementById("password") as HTMLInputElement;
-  const addressInput = document.getElementById("address") as HTMLInputElement;
-  const licensePlateInput = document.getElementById(
-    "license-plate-number"
-  ) as HTMLInputElement;
-  const creditCardInput = document.getElementById(
-    "credit-card"
-  ) as HTMLInputElement;
+// function addUser(event: Event) {
+//   //Pushing font results to the userData array
+//   event.preventDefault();
+//   const userNameInput = document.getElementById(
+//     "user-name"
+//   ) as HTMLInputElement;
+//   const passwordInput = document.getElementById("password") as HTMLInputElement;
+//   const addressInput = document.getElementById("address") as HTMLInputElement;
+//   const licensePlateInput = document.getElementById(
+//     "license-plate-number"
+//   ) as HTMLInputElement;
+//   const creditCardInput = document.getElementById(
+//     "credit-card"
+//   ) as HTMLInputElement;
 
-  const newUserData: UserData = {
-    uid: Math.floor(Math.random() * 10000),
-    userName: userNameInput.value,
-    password: passwordInput.value,
-    address: addressInput.value,
-    licensePlate: Number(licensePlateInput.value),
-    creditCard: Number(creditCardInput.value),
-  };
-  userData.push(newUserData);
-  localStorage.setItem("userData", JSON.stringify(userData));
-}
+//   const newUserData: UserData = {
+//     uid: Math.floor(Math.random() * 10000),
+//     userName: userNameInput.value,
+//     password: passwordInput.value,
+//     address: addressInput.value,
+//     licensePlate: Number(licensePlateInput.value),
+//     creditCard: Number(creditCardInput.value),
+//   };
+//   userData.push(newUserData);
+//   localStorage.setItem("userData", JSON.stringify(userData));
+// }
 
-const frm = document.getElementById("form") as HTMLFormElement;
-frm.addEventListener("submit", addUser);
+// const frm = document.getElementById("form") as HTMLFormElement;
+// frm.addEventListener("submit", addUser);
 
-const storedUserData = localStorage.getItem("userData");
-if (storedUserData) {
-  userData = JSON.parse(storedUserData);
-}
+// const storedUserData = localStorage.getItem("userData");
+// if (storedUserData) {
+//   userData = JSON.parse(storedUserData);
+// }
 
-const btn = document.getElementById("register_button") as HTMLButtonElement;
-btn.addEventListener("click", () => {
-  window.location.href = "../page 1 login/login.html";
-});
+// const btn = document.getElementById("register_button") as HTMLButtonElement;
+// btn.addEventListener("click", () => {
+//   window.location.href = "../page 1 login/login.html";
+// });
 ////////////////////////////page-3//////////////////////////////////////////
 
 const citySelect = document.getElementById("city") as HTMLSelectElement;
