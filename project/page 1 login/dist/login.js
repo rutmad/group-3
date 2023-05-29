@@ -1,5 +1,5 @@
 if (localStorage.getItem("user"))
-    window.location.href = "http://127.0.0.1:5500/project/page%204/index.html";
+    window.location.href = "http://localhost:5500/project/page-3/parking.html";
 var currentData = JSON.parse(localStorage.getItem("users") || "[]");
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.onclick = function (e) { return handleSubmit(e); };
