@@ -30,9 +30,7 @@ body {
 .logo {
   font-size: 2em;
   color: #000000;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .navigation a {
@@ -90,8 +88,7 @@ body {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -190,4 +187,4 @@ body {
   font-weight: 500;
   bottom: 28px;
   left: 47px;
-}/*# sourceMappingURL=register.css.map */
+}
