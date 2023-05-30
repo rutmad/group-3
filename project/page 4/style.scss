@@ -5,12 +5,15 @@
   font-family: sans-serif;
 }
 body {
-  background-color: #f4f4f4;
+  // background-color: #f4f4f4;
+  background-image: url("./image/R.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
