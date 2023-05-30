@@ -13,7 +13,7 @@ function login(userName, password) {
         };
     }
     return {
-        message: "Logged in successfuly.",
+        message: "Logged in successfully.",
         user: loggedInUser[0]
     };
 }
