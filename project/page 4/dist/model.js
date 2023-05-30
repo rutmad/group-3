@@ -1,26 +1,12 @@
-//////////////////////////Register///////////////////////////////////
-var UserData = /** @class */ (function () {
-    function UserData(uid, userName, password, address, licensePlate, creditCard) {
-        this.uid = uid;
-        this.userName = userName;
-        this.password = password;
-        this.address = address;
-        this.licensePlate = licensePlate;
-        this.creditCard = creditCard;
-    }
-    return UserData;
-}());
-var userData = [];
-///////////////////////////////////////////////////////////////////////////////
 var TimerModel = /** @class */ (function () {
-    function TimerModel() {
+    function TimerModel(seconds, timer, onUpdateCallback) {
+        this.seconds = seconds;
+        this.timer = timer;
+        this.onUpdateCallback = onUpdateCallback;
         this.seconds = 0;
         this.timer = 0;
         this.onUpdateCallback = function () { };
     }
-    TimerModel.prototype.setOnUpdateCallback = function (callback) {
-        this.onUpdateCallback = callback;
-    };
     TimerModel.prototype.startTimer = function () {
         var _this = this;
         this.timer = setInterval(function () {
@@ -44,7 +30,9 @@ var TimerModel = /** @class */ (function () {
     return TimerModel;
 }());
 var ParkingModel = /** @class */ (function () {
-    function ParkingModel() {
+    function ParkingModel(selectedCity, vehicleNumber) {
+        this.selectedCity = selectedCity;
+        this.vehicleNumber = vehicleNumber;
         this.selectedCity = "";
         this.vehicleNumber = "";
     }
@@ -62,3 +50,17 @@ var ParkingModel = /** @class */ (function () {
     };
     return ParkingModel;
 }());
+//////////////////////////Register///////////////////////////////////
+var UserData = /** @class */ (function () {
+    function UserData(uid, userName, password, address, licensePlate, creditCard) {
+        this.uid = uid;
+        this.userName = userName;
+        this.password = password;
+        this.address = address;
+        this.licensePlate = licensePlate;
+        this.creditCard = creditCard;
+    }
+    return UserData;
+}());
+var userData = [];
+///////////////////////////////////////////////////////////////////////////////

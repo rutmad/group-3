@@ -1,11 +1,7 @@
-/////////////////////////////register//////////////////////////////////////////////
-var storedUserData = localStorage.getItem("userData");
-if (storedUserData) {
-    userData = JSON.parse(storedUserData);
-}
-////////////////////////////////////////////////////////////////////////////////////
 var TimerView = /** @class */ (function () {
-    function TimerView() {
+    function TimerView(timerLabel, timerDisplay) {
+        this.timerLabel = timerLabel;
+        this.timerDisplay = timerDisplay;
         this.timerLabel = document.getElementById("timer-label");
         this.timerDisplay = document.getElementById("timer");
     }
@@ -75,3 +71,9 @@ var ParkingView = /** @class */ (function () {
     };
     return ParkingView;
 }());
+/////////////////////////////register//////////////////////////////////////////////
+var storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+    userData = JSON.parse(storedUserData);
+}
+////////////////////////////////////////////////////////////////////////////////////

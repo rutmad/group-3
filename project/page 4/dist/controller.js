@@ -1,29 +1,3 @@
-//////////////////////////Register///////////////////////////////////
-function addUser(event) {
-    event.preventDefault();
-    var userNameInput = document.getElementById("user-name");
-    var passwordInput = document.getElementById("password");
-    var addressInput = document.getElementById("address");
-    var licensePlateInput = document.getElementById("license-plate-number");
-    var creditCardInput = document.getElementById("credit-card");
-    var newUserData = {
-        uid: Math.floor(Math.random() * 10000),
-        userName: userNameInput.value,
-        password: passwordInput.value,
-        address: addressInput.value,
-        licensePlate: Number(licensePlateInput.value),
-        creditCard: Number(creditCardInput.value)
-    };
-    userData.push(newUserData);
-    localStorage.setItem("userData", JSON.stringify(userData));
-}
-var frm = document.getElementById("form");
-frm.addEventListener("submit", addUser);
-var btn = document.getElementById("register_button");
-btn.addEventListener("click", function () {
-    window.location.href = "../page 1 login/login.html";
-});
-///////////////////////////////////////////////////////////////////////////////
 var ParkingController = /** @class */ (function () {
     function ParkingController() {
         var _this = this;
@@ -55,7 +29,6 @@ var ParkingController = /** @class */ (function () {
         this.parkingView.citySelect.disabled = false;
         this.parkingView.vehicleNumberInput.disabled = false;
         this.parkingView.endParkingButton.disabled = true;
-        this.parkingView.timerDisplay.parentElement.hidden = true;
         this.timerModel.stopTimer();
         var totalTime = this.timerModel.getSecondsElapsed();
         this.displayParkingSummary(totalTime, "");
@@ -66,7 +39,7 @@ var ParkingController = /** @class */ (function () {
         var costElement = document.getElementById("cost");
         var timeElement = document.getElementById("time");
         costElement.textContent = "Total cost: $" + totalCost.toFixed(2);
-        timeElement.textContent = totalTime + " seconds";
+        timeElement.textContent = this.timerView.getFormattedTime(totalTime);
         this.timerModel.resetTimer();
         this.parkingView.enableCitySelect();
         this.parkingView.enableVehicleNumberInput();
@@ -82,3 +55,29 @@ var ParkingController = /** @class */ (function () {
     };
     return ParkingController;
 }());
+//////////////////////////Register///////////////////////////////////
+function addUser(event) {
+    event.preventDefault();
+    var userNameInput = document.getElementById("user-name");
+    var passwordInput = document.getElementById("password");
+    var addressInput = document.getElementById("address");
+    var licensePlateInput = document.getElementById("license-plate-number");
+    var creditCardInput = document.getElementById("credit-card");
+    var newUserData = {
+        uid: Math.floor(Math.random() * 10000),
+        userName: userNameInput.value,
+        password: passwordInput.value,
+        address: addressInput.value,
+        licensePlate: Number(licensePlateInput.value),
+        creditCard: Number(creditCardInput.value)
+    };
+    userData.push(newUserData);
+    localStorage.setItem("userData", JSON.stringify(userData));
+}
+var frm = document.getElementById("form");
+frm.addEventListener("submit", addUser);
+var btn = document.getElementById("register_button");
+btn.addEventListener("click", function () {
+    window.location.href = "../page 1 login/login.html";
+});
+///////////////////////////////////////////////////////////////////////////////

@@ -1,39 +1,3 @@
-//////////////////////////Register///////////////////////////////////
-function addUser(event: Event) {
-  event.preventDefault();
-  const userNameInput = document.getElementById(
-    "user-name"
-  ) as HTMLInputElement;
-  const passwordInput = document.getElementById("password") as HTMLInputElement;
-  const addressInput = document.getElementById("address") as HTMLInputElement;
-  const licensePlateInput = document.getElementById(
-    "license-plate-number"
-  ) as HTMLInputElement;
-  const creditCardInput = document.getElementById(
-    "credit-card"
-  ) as HTMLInputElement;
-
-  const newUserData: UserData = {
-    uid: Math.floor(Math.random() * 10000),
-    userName: userNameInput.value,
-    password: passwordInput.value,
-    address: addressInput.value,
-    licensePlate: Number(licensePlateInput.value),
-    creditCard: Number(creditCardInput.value),
-  };
-  userData.push(newUserData);
-  localStorage.setItem("userData", JSON.stringify(userData));
-}
-
-const frm = document.getElementById("form") as HTMLFormElement;
-frm.addEventListener("submit", addUser);
-
-const btn = document.getElementById("register_button") as HTMLButtonElement;
-btn.addEventListener("click", () => {
-  window.location.href = "../page 1 login/login.html";
-});
-///////////////////////////////////////////////////////////////////////////////
-
 class ParkingController {
   parkingView: ParkingView;
   timerModel: TimerModel;
@@ -77,7 +41,6 @@ class ParkingController {
     this.parkingView.citySelect.disabled = false;
     this.parkingView.vehicleNumberInput.disabled = false;
     this.parkingView.endParkingButton.disabled = true;
-    this.parkingView.timerDisplay.parentElement!.hidden = true;
 
     this.timerModel.stopTimer();
 
@@ -95,7 +58,7 @@ class ParkingController {
     const timeElement = document.getElementById("time");
 
     costElement!.textContent = "Total cost: $" + totalCost.toFixed(2);
-    timeElement!.textContent = totalTime + " seconds";
+    timeElement!.textContent = this.timerView.getFormattedTime(totalTime);
 
     this.timerModel.resetTimer();
     this.parkingView.enableCitySelect();
@@ -111,3 +74,39 @@ class ParkingController {
     }, 1000);
   }
 }
+
+//////////////////////////Register///////////////////////////////////
+function addUser(event: Event) {
+  event.preventDefault();
+  const userNameInput = document.getElementById(
+    "user-name"
+  ) as HTMLInputElement;
+  const passwordInput = document.getElementById("password") as HTMLInputElement;
+  const addressInput = document.getElementById("address") as HTMLInputElement;
+  const licensePlateInput = document.getElementById(
+    "license-plate-number"
+  ) as HTMLInputElement;
+  const creditCardInput = document.getElementById(
+    "credit-card"
+  ) as HTMLInputElement;
+
+  const newUserData: UserData = {
+    uid: Math.floor(Math.random() * 10000),
+    userName: userNameInput.value,
+    password: passwordInput.value,
+    address: addressInput.value,
+    licensePlate: Number(licensePlateInput.value),
+    creditCard: Number(creditCardInput.value),
+  };
+  userData.push(newUserData);
+  localStorage.setItem("userData", JSON.stringify(userData));
+}
+
+const frm = document.getElementById("form") as HTMLFormElement;
+frm.addEventListener("submit", addUser);
+
+const btn = document.getElementById("register_button") as HTMLButtonElement;
+btn.addEventListener("click", () => {
+  window.location.href = "../page 1 login/login.html";
+});
+///////////////////////////////////////////////////////////////////////////////

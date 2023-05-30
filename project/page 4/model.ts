@@ -1,31 +1,12 @@
-//////////////////////////Register///////////////////////////////////
-class UserData {
-  constructor(
-    public uid: number,
-    public userName: string,
-    public password: string,
-    public address: string,
-    public licensePlate: number,
-    public creditCard: number
-  ) {}
-}
-
-let userData: UserData[] = [];
-///////////////////////////////////////////////////////////////////////////////
-
 class TimerModel {
-  private seconds: number;
-  private timer: number;
-  private onUpdateCallback: (seconds: number) => void;
-
-  constructor() {
+  constructor(
+    private seconds: number,
+    private timer: number,
+    private onUpdateCallback: (seconds: number) => void
+  ) {
     this.seconds = 0;
     this.timer = 0;
     this.onUpdateCallback = () => {};
-  }
-
-  setOnUpdateCallback(callback: (seconds: number) => void) {
-    this.onUpdateCallback = callback;
   }
 
   startTimer() {
@@ -54,10 +35,7 @@ class TimerModel {
 }
 
 class ParkingModel {
-  private selectedCity: string;
-  private vehicleNumber: string;
-
-  constructor() {
+  constructor(private selectedCity: string, private vehicleNumber: string) {
     this.selectedCity = "";
     this.vehicleNumber = "";
   }
@@ -78,3 +56,18 @@ class ParkingModel {
     return this.vehicleNumber;
   }
 }
+
+//////////////////////////Register///////////////////////////////////
+class UserData {
+  constructor(
+    public uid: number,
+    public userName: string,
+    public password: string,
+    public address: string,
+    public licensePlate: number,
+    public creditCard: number
+  ) {}
+}
+
+let userData: UserData[] = [];
+///////////////////////////////////////////////////////////////////////////////
