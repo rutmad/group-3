@@ -30,11 +30,14 @@
             <a href="#">Forgot Password?</a>
           </div>
           <input id="submitBtn" type="submit" value="Login" class="btn" />
+          <button type="button" id="goToRegister_button" class="btn">
+            register
+          </button>
         </form>
         <p id="feedback"></p>
       </div>
     </div>
-    <div id="page2" class="page">
+    <div id="page2" class="page" style="display: none">
       <div class="form-box login">
         <form id="form" action="#">
           <div class="input-box">
@@ -79,25 +82,23 @@
       </div>
     </div>
 
-    <div id="page3" class="page">
-      <h1 class="logo">Select parking</h1>
-      <div class="wrapper">
-        <div class="city-selection">
-          <label for="city">Select City:</label>
-          <select id="city">
-            <option value="" disabled selected></option>
-            <option value="1">Rishon Lezion</option>
-            <option value="2">Bat Yam</option>
-            <option value="3">Jerusalem</option>
-            <option value="4">Tel Aviv</option>
-            <option value="5">Petah Tikva</option>
-            <option value="6">Holon</option>
-            <option value="7">Nahariya</option>
-            <option value="8">Rehovot</option>
-            <option value="9">Yavne</option>
-            <option value="10">Modyin</option>
-          </select>
-        </div>
+    <div id="page3" class="page" style="display: none">
+      <h1 class="logo">Parking</h1>
+      <div class="city-selection">
+        <label for="city">Select City:</label>
+        <select id="city">
+          <option value="" disabled selected></option>
+          <option value="1">Rishon Lezion</option>
+          <option value="2">Bat Yam</option>
+          <option value="3">Jerusalem</option>
+          <option value="4">Tel Aviv</option>
+          <option value="5">Petah Tikva</option>
+          <option value="6">Holon</option>
+          <option value="7">Nahariya</option>
+          <option value="8">Rehovot</option>
+          <option value="9">Yavne</option>
+          <option value="10">Modyin</option>
+        </select>
       </div>
       <div class="vehicle-number">
         <label for="number">Vehicle Number:</label>
@@ -112,7 +113,6 @@
         <p id="timer">0 seconds</p>
       </div>
     </div>
-
     <div id="page4" class="page" style="display: none">
       <h1>Parking Summary</h1>
       <div class="parking-info">
@@ -122,3 +122,5 @@
     </div>
   </body>
 </html>
+
+<div class="page" id="page5" style="display: none"></div>
