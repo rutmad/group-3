@@ -22,7 +22,7 @@ class ParkingController {
 
     const loginButton = document.getElementById("submitBtn");
     loginButton!.addEventListener("click", () => {
-      this.parkingView.showPage("page3");
+      this.handleLogin();
     });
 
     this.parkingView.startParkingButton.addEventListener("click", () => {
@@ -87,5 +87,67 @@ class ParkingController {
     setTimeout(() => {
       this.updateTimer();
     }, 1000);
+  }
+
+  handleRegistration() {
+    const usernameInput = document.getElementById(
+      "user-name"
+    ) as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
+    const addressInput = document.getElementById("address") as HTMLInputElement;
+    const licensePlateInput = document.getElementById(
+      "license-plate-number"
+    ) as HTMLInputElement;
+    const creditCardInput = document.getElementById(
+      "credit-card"
+    ) as HTMLInputElement;
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    this.parkingView.showPage("page1");
+  }
+
+  initialize() {
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
+
+    if (!storedUsername || !storedPassword) {
+      const feedbackElement = document.getElementById("feedback");
+      feedbackElement!.textContent =
+        "Registration required. Please register on the registration page.";
+    }
+  }
+
+  handleLogin() {
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
+
+    const usernameInput = document.getElementById(
+      "username"
+    ) as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
+    const feedbackElement = document.getElementById("feedback");
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    if (username === storedUsername) {
+      if (password === storedPassword) {
+        this.parkingView.showPage("page3");
+      } else {
+        feedbackElement!.textContent = "Incorrect password.";
+      }
+    } else {
+      feedbackElement!.textContent =
+        "Registration required. Please register on the registration page.";
+    }
   }
 }

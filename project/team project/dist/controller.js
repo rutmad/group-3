@@ -15,7 +15,7 @@ var ParkingController = /** @class */ (function () {
         });
         var loginButton = document.getElementById("submitBtn");
         loginButton.addEventListener("click", function () {
-            _this.parkingView.showPage("page3");
+            _this.handleLogin();
         });
         this.parkingView.startParkingButton.addEventListener("click", function () {
             _this.startParking();
@@ -64,6 +64,48 @@ var ParkingController = /** @class */ (function () {
         setTimeout(function () {
             _this.updateTimer();
         }, 1000);
+    };
+    ParkingController.prototype.handleRegistration = function () {
+        var usernameInput = document.getElementById("user-name");
+        var passwordInput = document.getElementById("password");
+        var addressInput = document.getElementById("address");
+        var licensePlateInput = document.getElementById("license-plate-number");
+        var creditCardInput = document.getElementById("credit-card");
+        var username = usernameInput.value;
+        var password = passwordInput.value;
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        this.parkingView.showPage("page1");
+    };
+    ParkingController.prototype.initialize = function () {
+        var storedUsername = localStorage.getItem("username");
+        var storedPassword = localStorage.getItem("password");
+        if (!storedUsername || !storedPassword) {
+            var feedbackElement = document.getElementById("feedback");
+            feedbackElement.textContent =
+                "Registration required. Please register on the registration page.";
+        }
+    };
+    ParkingController.prototype.handleLogin = function () {
+        var storedUsername = localStorage.getItem("username");
+        var storedPassword = localStorage.getItem("password");
+        var usernameInput = document.getElementById("username");
+        var passwordInput = document.getElementById("password");
+        var feedbackElement = document.getElementById("feedback");
+        var username = usernameInput.value;
+        var password = passwordInput.value;
+        if (username === storedUsername) {
+            if (password === storedPassword) {
+                this.parkingView.showPage("page3");
+            }
+            else {
+                feedbackElement.textContent = "Incorrect password.";
+            }
+        }
+        else {
+            feedbackElement.textContent =
+                "Registration required. Please register on the registration page.";
+        }
     };
     return ParkingController;
 }());
