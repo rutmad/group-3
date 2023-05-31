@@ -7,7 +7,10 @@ var ParkingController = /** @class */ (function () {
         this.timerView = new TimerView();
         var goToRegisterButton = document.getElementById("goToRegister_button");
         goToRegisterButton.addEventListener("click", function () {
+            var vehicleNumber = _this.parkingView.getVehicleNumber();
             _this.parkingView.showPage("page2");
+            var vehicleNumberInput = document.getElementById("license-plate-number");
+            vehicleNumberInput.value = vehicleNumber;
         });
         var register_button = document.getElementById("register_button");
         register_button.addEventListener("click", function () {
