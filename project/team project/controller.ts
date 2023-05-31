@@ -12,17 +12,17 @@ class ParkingController {
 
     const goToRegisterButton = document.getElementById("goToRegister_button");
     goToRegisterButton!.addEventListener("click", () => {
-      this.parkingView.showPage("page2"); // Show page 2
+      this.parkingView.showPage("page2");
     });
 
     const register_button = document.getElementById("register_button");
     register_button!.addEventListener("click", () => {
-      this.parkingView.showPage("page1"); // Show page 2
+      this.parkingView.showPage("page1");
     });
 
     const loginButton = document.getElementById("submitBtn");
     loginButton!.addEventListener("click", () => {
-      this.parkingView.showPage("page3"); // Show page 3
+      this.parkingView.showPage("page3");
     });
 
     this.parkingView.startParkingButton.addEventListener("click", () => {

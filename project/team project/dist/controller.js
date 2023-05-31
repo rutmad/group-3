@@ -7,15 +7,15 @@ var ParkingController = /** @class */ (function () {
         this.timerView = new TimerView();
         var goToRegisterButton = document.getElementById("goToRegister_button");
         goToRegisterButton.addEventListener("click", function () {
-            _this.parkingView.showPage("page2"); // Show page 2
+            _this.parkingView.showPage("page2");
         });
         var register_button = document.getElementById("register_button");
         register_button.addEventListener("click", function () {
-            _this.parkingView.showPage("page1"); // Show page 2
+            _this.parkingView.showPage("page1");
         });
         var loginButton = document.getElementById("submitBtn");
         loginButton.addEventListener("click", function () {
-            _this.parkingView.showPage("page3"); // Show page 3
+            _this.parkingView.showPage("page3");
         });
         this.parkingView.startParkingButton.addEventListener("click", function () {
             _this.startParking();
