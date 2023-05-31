@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 body {
-  background-color: #f4f4f4;
+  background-color: white;
 }
 
 .page {
@@ -82,7 +82,7 @@ body {
   font-size: 20px;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #1a9898;
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -90,7 +90,7 @@ body {
   transition: background-color 0.3s ease;
   &:hover {
     background-color: #bfc9d4;
-    color: #007bff;
+    color: #1a9898;
     font-weight: bold;
   }
 }
@@ -104,8 +104,13 @@ body {
   margin-top: 20px;
   text-align: center;
 }
+.timer__img {
+  margin-left: 165px;
+  margin-top: -79px;
+}
 
 .timer p {
   font-weight: bold;
   color: #333;
+  margin-right: 68px;
 }
