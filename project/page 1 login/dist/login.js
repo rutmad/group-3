@@ -4,6 +4,7 @@ var currentData = JSON.parse(localStorage.getItem("users") || "[]");
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.onclick = function (e) { return handleSubmit(e); };
 function login(userName, password) {
+    console.log(userName + password);
     var loggedInUser = currentData.filter(function (user) { return user.userName === userName && user.password === password; });
     console.log(loggedInUser);
     if (loggedInUser.length === 0) {
@@ -17,10 +18,8 @@ function login(userName, password) {
         user: loggedInUser[0]
     };
 }
-var hello = function () {
-    console.log("hello");
-};
 function handleSubmit(e) {
+    console.log("submit");
     e.preventDefault();
     var username = document.getElementById("username");
     var password = document.getElementById("password");

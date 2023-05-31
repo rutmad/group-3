@@ -11,10 +11,11 @@ class UserData {
 }
 
 //try to get users data from the localstorage. else return []
-const currentData = JSON.parse(localStorage.getItem("users") || "[]");
-const userData: UserData[] = [...currentData];
+let currentData = JSON.parse(localStorage.getItem("users") || "[]");
+let userData: UserData[] = [...currentData];
 
 function addUser(event: Event) {
+  console.log("fd");
   //Pushing font results to the userData array
   event.preventDefault();
   const userNameInput = document.getElementById(
@@ -42,7 +43,7 @@ function addUser(event: Event) {
   console.log(userData);
 }
 
-const frm = document.getElementById("form") as HTMLFormElement;
+const frm = document.getElementById("form1") as HTMLFormElement;
 frm.addEventListener("submit", addUser);
 
 const storedUserData = localStorage.getItem("userData");

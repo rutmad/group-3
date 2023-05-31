@@ -5,6 +5,7 @@ const currentData = JSON.parse(localStorage.getItem("users") || "[]");
 const submitBtn = document.getElementById("submitBtn") as HTMLInputElement;
 submitBtn.onclick = (e) => handleSubmit(e);
 function login(userName, password) {
+  console.log(userName + password);
   const loggedInUser = currentData.filter(
     (user) => user.userName === userName && user.password === password
   );
@@ -21,10 +22,8 @@ function login(userName, password) {
   };
 }
 
-const hello = () => {
-  console.log("hello");
-};
 function handleSubmit(e: Event) {
+  console.log("submit");
   e.preventDefault();
   const username = document.getElementById("username") as HTMLInputElement;
   const password = document.getElementById("password") as HTMLInputElement;

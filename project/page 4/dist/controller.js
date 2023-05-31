@@ -57,6 +57,7 @@ var ParkingController = /** @class */ (function () {
 }());
 //////////////////////////Register///////////////////////////////////
 function addUser(event) {
+    console.log("run");
     event.preventDefault();
     var userNameInput = document.getElementById("user-name");
     var passwordInput = document.getElementById("password");
@@ -72,12 +73,11 @@ function addUser(event) {
         creditCard: Number(creditCardInput.value)
     };
     userData.push(newUserData);
-    localStorage.setItem("userData", JSON.stringify(userData));
-}
-var frm = document.getElementById("form");
-frm.addEventListener("submit", addUser);
-var btn = document.getElementById("register_button");
-btn.addEventListener("click", function () {
+    localStorage.setItem("users", JSON.stringify(userData));
     window.location.href = "../page 1 login/login.html";
+}
+var btn = document.getElementById("register_button");
+btn.addEventListener("click", function (e) {
+    addUser(e);
 });
 ///////////////////////////////////////////////////////////////////////////////

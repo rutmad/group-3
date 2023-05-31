@@ -77,6 +77,7 @@ class ParkingController {
 
 //////////////////////////Register///////////////////////////////////
 function addUser(event: Event) {
+  console.log("run");
   event.preventDefault();
   const userNameInput = document.getElementById(
     "user-name"
@@ -99,14 +100,12 @@ function addUser(event: Event) {
     creditCard: Number(creditCardInput.value),
   };
   userData.push(newUserData);
-  localStorage.setItem("userData", JSON.stringify(userData));
+  localStorage.setItem("users", JSON.stringify(userData));
+  window.location.href = "../page 1 login/login.html";
 }
 
-const frm = document.getElementById("form") as HTMLFormElement;
-frm.addEventListener("submit", addUser);
-
 const btn = document.getElementById("register_button") as HTMLButtonElement;
-btn.addEventListener("click", () => {
-  window.location.href = "../page 1 login/login.html";
+btn.addEventListener("click", (e) => {
+  addUser(e);
 });
 ///////////////////////////////////////////////////////////////////////////////

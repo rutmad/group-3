@@ -21,6 +21,7 @@ var UserData = /** @class */ (function () {
 var currentData = JSON.parse(localStorage.getItem("users") || "[]");
 var userData = __spreadArrays(currentData);
 function addUser(event) {
+    console.log("fd");
     //Pushing font results to the userData array
     event.preventDefault();
     var userNameInput = document.getElementById("user-name");
@@ -40,17 +41,13 @@ function addUser(event) {
     localStorage.setItem("users", JSON.stringify(userData));
     console.log(userData);
 }
-var frm = document.getElementById("form");
+var frm = document.getElementById("form1");
 frm.addEventListener("submit", addUser);
 var storedUserData = localStorage.getItem("userData");
 if (storedUserData) {
     userData = JSON.parse(storedUserData);
 }
-var btn = document.getElementById("register_button");
-btn.addEventListener("click", function () {
-    window.location.href = "../page 1 login/login.html";
-});
-////////////////////////////page-3//////////////////////////////////////////
+////////////////////////////page-4//////////////////////////////////////////
 // const citySelect = document.getElementById("city") as HTMLSelectElement;
 // const vehicleNumberInput = document.getElementById(
 //   "number"
