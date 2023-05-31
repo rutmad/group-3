@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Parking</title>
-    <script src="./dist/parking.js" defer></script>
     <link rel="stylesheet" href="./dist/style.css" />
     <script src="./dist/model.js" defer></script>
     <script src="./dist/controller.js" defer></script>
@@ -11,6 +10,15 @@
     <script src="./dist/index.js" defer></script>
   </head>
   <body>
+    <div class="mainLogo">
+      <img
+        class="mainLogo__img"
+        src="./image/parking-garage-15.png"
+        width="150px"
+      />
+      <h1 class="mainLogo__p">arking</h1>
+    </div>
+
     <div id="page1" class="page">
       <div class="form-box login">
         <h2>Login</h2>
@@ -84,6 +92,9 @@
 
     <div id="page3" class="page" style="display: none">
       <h1 class="logo">Select parking</h1>
+      <div class="greeting">
+        <p id="welcome-message"></p>
+      </div>
       <div class="city-selection">
         <label for="city">Select City:</label>
         <select id="city">

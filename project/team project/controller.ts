@@ -12,7 +12,12 @@ class ParkingController {
 
     const goToRegisterButton = document.getElementById("goToRegister_button");
     goToRegisterButton!.addEventListener("click", () => {
+      const vehicleNumber = this.parkingView.getVehicleNumber();
       this.parkingView.showPage("page2");
+      const vehicleNumberInput = document.getElementById(
+        "license-plate-number"
+      ) as HTMLInputElement;
+      vehicleNumberInput.value = vehicleNumber;
     });
 
     const register_button = document.getElementById("register_button");
