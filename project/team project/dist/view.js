@@ -71,3 +71,8 @@ var ParkingView = /** @class */ (function () {
     };
     return ParkingView;
 }());
+//////////////Register//////////
+var storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+    userData = JSON.parse(storedUserData);
+}
