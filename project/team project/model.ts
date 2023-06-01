@@ -56,3 +56,17 @@ class ParkingModel {
     return this.vehicleNumber;
   }
 }
+
+//////////////Register/////////////////
+class UserData {
+  constructor(
+    public uid: number,
+    public userName: string,
+    public password: string,
+    public address: string,
+    public licensePlate: number,
+    public creditCard: number
+  ) {}
+}
+
+let userData: UserData[] = [];

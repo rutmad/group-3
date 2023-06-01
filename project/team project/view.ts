@@ -102,3 +102,9 @@ class ParkingView {
     });
   }
 }
+
+//////////////Register//////////
+const storedUserData = localStorage.getItem("userData");
+if (storedUserData) {
+  userData = JSON.parse(storedUserData);
+}
