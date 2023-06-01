@@ -80,15 +80,6 @@ var ParkingController = /** @class */ (function () {
         localStorage.setItem("password", password);
         this.parkingView.showPage("page1");
     };
-    ParkingController.prototype.initialize = function () {
-        var storedUsername = localStorage.getItem("username");
-        var storedPassword = localStorage.getItem("password");
-        if (!storedUsername || !storedPassword) {
-            var feedbackElement = document.getElementById("feedback");
-            feedbackElement.textContent =
-                "Registration required. Please register on the registration page.";
-        }
-    };
     ParkingController.prototype.handleLogin = function () {
         var storedUsername = localStorage.getItem("username");
         var storedPassword = localStorage.getItem("password");

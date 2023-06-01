@@ -118,17 +118,6 @@ class ParkingController {
     this.parkingView.showPage("page1");
   }
 
-  initialize() {
-    const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
-
-    if (!storedUsername || !storedPassword) {
-      const feedbackElement = document.getElementById("feedback");
-      feedbackElement!.textContent =
-        "Registration required. Please register on the registration page.";
-    }
-  }
-
   handleLogin() {
     const storedUsername = localStorage.getItem("username");
     const storedPassword = localStorage.getItem("password");
