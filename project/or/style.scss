@@ -2,46 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
-
 body {
   background-color: white;
 }
-
 .mainLogo {
   margin-top: 50px;
   margin-left: 50px;
+  &__p {
+    margin-left: 80px;
+    font-size: 2.5rem;
+    margin-top: -40px;
+  }
 }
-.mainLogo__p {
-  margin-left: 80px;
-  font-size: 2.5rem;
-  margin-top: -50px;
-}
-.mainLogo__img__car {
-  margin-left: 100px;
-  margin-top: auto;
-}
-.mainLogo__text__h1 {
-  margin-bottom: 40px;
-  font-weight: 800;
-  margin-left: 40px;
-  margin-top: 80px;
-}
-.mainLogo__text__h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  margin-left: 40px;
-}
-.mainLogo__text__p {
-  line-height: 2;
-  font-size: 18px;
-  margin-left: 40px;
-  font-weight: 500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .page {
   width: 400px;
   height: 507px;
@@ -50,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 2;
-  margin: -397px 765px;
+  margin: 30px auto;
   padding: 20px;
   background: transparent;
   border-width: 2px;
@@ -116,18 +90,17 @@ body {
   font-size: 20px;
   display: inline-block;
   padding: 10px 20px;
-  margin-top: 10px;
   background-color: #1a9898;
   color: #fff;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-.parking-buttons button:hover {
-  background-color: #bfc9d4;
-  color: #1a9898;
-  font-weight: bold;
+  &:hover {
+    background-color: #bfc9d4;
+    color: #1a9898;
+    font-weight: bold;
+  }
 }
 
 .parking-buttons button:disabled {
@@ -139,7 +112,6 @@ body {
   margin-top: 20px;
   text-align: center;
 }
-
 .timer__img {
   margin-left: 165px;
   margin-top: -79px;

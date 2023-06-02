@@ -50,16 +50,3 @@ var ParkingModel = /** @class */ (function () {
     };
     return ParkingModel;
 }());
-//////////////Register/////////////////
-var UserData = /** @class */ (function () {
-    function UserData(uid, userName, password, address, licensePlate, creditCard) {
-        this.uid = uid;
-        this.userName = userName;
-        this.password = password;
-        this.address = address;
-        this.licensePlate = licensePlate;
-        this.creditCard = creditCard;
-    }
-    return UserData;
-}());
-var userData = [];

@@ -80,6 +80,15 @@ var ParkingController = /** @class */ (function () {
         localStorage.setItem("password", password);
         this.parkingView.showPage("page1");
     };
+    ParkingController.prototype.initialize = function () {
+        var storedUsername = localStorage.getItem("username");
+        var storedPassword = localStorage.getItem("password");
+        if (!storedUsername || !storedPassword) {
+            var feedbackElement = document.getElementById("feedback");
+            feedbackElement.textContent =
+                "Registration required. Please register on the registration page.";
+        }
+    };
     ParkingController.prototype.handleLogin = function () {
         var storedUsername = localStorage.getItem("username");
         var storedPassword = localStorage.getItem("password");
@@ -103,28 +112,3 @@ var ParkingController = /** @class */ (function () {
     };
     return ParkingController;
 }());
-/////Register
-function addUser(event) {
-    event.preventDefault();
-    var userNameInput = document.getElementById("user-name");
-    var passwordInput = document.getElementById("user-password");
-    var addressInput = document.getElementById("address");
-    var licensePlateInput = document.getElementById("license-plate-number");
-    var creditCardInput = document.getElementById("credit-card");
-    var newUserData = {
-        uid: Math.floor(Math.random() * 10000),
-        userName: userNameInput.value,
-        password: passwordInput.value,
-        address: addressInput.value,
-        licensePlate: Number(licensePlateInput.value),
-        creditCard: Number(creditCardInput.value)
-    };
-    userData.push(newUserData);
-    localStorage.setItem("userData", JSON.stringify(userData));
-}
-var frm = document.getElementById("form");
-frm.addEventListener("submit", addUser);
-var btn = document.getElementById("register_button");
-btn.addEventListener("click", function () {
-    window.location.href = "./index.html";
-});
