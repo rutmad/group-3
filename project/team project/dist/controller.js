@@ -11,6 +11,7 @@ var ParkingController = /** @class */ (function () {
         });
         var register_button = document.getElementById("register_button");
         register_button.addEventListener("click", function () {
+            _this.addUser();
             _this.parkingView.showPage("page1");
         });
         var loginButton = document.getElementById("submitBtn");
@@ -65,8 +66,7 @@ var ParkingController = /** @class */ (function () {
             _this.updateTimer();
         }, 1000);
     };
-    ParkingController.prototype.addUser = function (event) {
-        event.preventDefault();
+    ParkingController.prototype.addUser = function () {
         var userNameInput = document.getElementById("user-name");
         var passwordInput = document.getElementById("user-password");
         var addressInput = document.getElementById("address");

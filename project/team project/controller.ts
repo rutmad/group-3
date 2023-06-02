@@ -17,6 +17,7 @@ class ParkingController {
 
     const register_button = document.getElementById("register_button");
     register_button!.addEventListener("click", () => {
+      this.addUser();
       this.parkingView.showPage("page1");
     });
 
@@ -89,8 +90,7 @@ class ParkingController {
     }, 1000);
   }
 
-  addUser(event: Event) {
-    event.preventDefault();
+  addUser() {
     const userNameInput = document.getElementById(
       "user-name"
     ) as HTMLInputElement;
