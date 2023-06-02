@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -16,7 +16,30 @@ body {
 .mainLogo__p {
   margin-left: 80px;
   font-size: 2.5rem;
-  margin-top: -40px;
+  margin-top: -50px;
+}
+.mainLogo__img__car {
+  margin-left: 100px;
+  margin-top: auto;
+}
+.mainLogo__text__h1 {
+  margin-bottom: 40px;
+  font-weight: 800;
+  margin-left: 40px;
+  margin-top: 80px;
+}
+.mainLogo__text__h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+.mainLogo__text__p {
+  line-height: 2;
+  font-size: 18px;
+  margin-left: 40px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page {
@@ -27,7 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 2;
-  margin: -100px auto;
+  margin: -397px 765px;
   padding: 20px;
   background: transparent;
   border-width: 2px;
@@ -93,6 +116,7 @@ body {
   font-size: 20px;
   display: inline-block;
   padding: 10px 20px;
+  margin-top: 10px;
   background-color: #1a9898;
   color: #fff;
   border: none;
