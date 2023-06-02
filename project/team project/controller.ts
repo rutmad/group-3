@@ -12,12 +12,7 @@ class ParkingController {
 
     const goToRegisterButton = document.getElementById("goToRegister_button");
     goToRegisterButton!.addEventListener("click", () => {
-      const vehicleNumber = this.parkingView.getVehicleNumber();
       this.parkingView.showPage("page2");
-      const vehicleNumberInput = document.getElementById(
-        "license-plate-number"
-      ) as HTMLInputElement;
-      vehicleNumberInput.value = vehicleNumber;
     });
 
     const register_button = document.getElementById("register_button");
@@ -94,12 +89,13 @@ class ParkingController {
     }, 1000);
   }
 
-  handleRegistration() {
-    const usernameInput = document.getElementById(
+  addUser(event: Event) {
+    event.preventDefault();
+    const userNameInput = document.getElementById(
       "user-name"
     ) as HTMLInputElement;
     const passwordInput = document.getElementById(
-      "password"
+      "user-password"
     ) as HTMLInputElement;
     const addressInput = document.getElementById("address") as HTMLInputElement;
     const licensePlateInput = document.getElementById(
@@ -109,18 +105,27 @@ class ParkingController {
       "credit-card"
     ) as HTMLInputElement;
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-
+    const newUserData: UserData = {
+      uid: Math.floor(Math.random() * 10000),
+      userName: userNameInput.value,
+      password: passwordInput.value,
+      address: addressInput.value,
+      licensePlate: Number(licensePlateInput.value),
+      creditCard: Number(creditCardInput.value),
+    };
+    userData.push(newUserData);
+    localStorage.setItem("userData", JSON.stringify(userData));
+    const frm = document.getElementById("form") as HTMLFormElement;
+    frm.addEventListener("submit", addUser);
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      userData = JSON.parse(storedUserData);
+    }
     this.parkingView.showPage("page1");
   }
 
   handleLogin() {
     const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
 
     const usernameInput = document.getElementById(
       "username"
