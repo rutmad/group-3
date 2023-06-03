@@ -24,15 +24,17 @@ body {
 }
 .mainLogo__text__h1 {
   margin-bottom: 40px;
-  font-weight: 800;
+  font-weight: 900;
   margin-left: 40px;
   margin-top: 80px;
+  color: #1a9898;
 }
 .mainLogo__text__h2 {
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: bold;
   margin-left: 40px;
+  color: #3f8484;
 }
 .mainLogo__text__p {
   line-height: 2;
