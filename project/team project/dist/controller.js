@@ -91,18 +91,25 @@ var ParkingController = /** @class */ (function () {
         this.parkingView.showPage("page1");
     };
     ParkingController.prototype.handleLogin = function () {
-        var storedUsername = localStorage.getItem("username");
+        var storedUserData = localStorage.getItem("userData");
         var usernameInput = document.getElementById("username");
         var passwordInput = document.getElementById("password");
         var feedbackElement = document.getElementById("feedback");
         var username = usernameInput.value;
         var password = passwordInput.value;
-        if (username === storedUsername) {
-            if (password === storedPassword) {
-                this.parkingView.showPage("page3");
+        if (storedUserData) {
+            var userData = JSON.parse(storedUserData);
+            var foundUser = userData.find(function (bobo) { return bobo.userName === username; });
+            if (foundUser) {
+                if (password === foundUser.password) {
+                    this.parkingView.showPage("page3");
+                }
+                else {
+                    feedbackElement.textContent = "Incorrect password.";
+                }
             }
             else {
-                feedbackElement.textContent = "Incorrect password.";
+                feedbackElement.textContent = "User not found.";
             }
         }
         else {
