@@ -125,8 +125,7 @@ class ParkingController {
   }
 
   handleLogin() {
-    const storedUsername = localStorage.getItem("username");
-
+    const storedUserData = localStorage.getItem("userData");
     const usernameInput = document.getElementById(
       "username"
     ) as HTMLInputElement;
@@ -138,11 +137,21 @@ class ParkingController {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    if (username === storedUsername) {
-      if (password === storedPassword) {
-        this.parkingView.showPage("page3");
+    if (storedUserData) {
+      const userData = JSON.parse(storedUserData);
+
+      const foundUser = userData.find(
+        (bobo: UserData) => bobo.userName === username
+      );
+
+      if (foundUser) {
+        if (password === foundUser.password) {
+          this.parkingView.showPage("page3");
+        } else {
+          feedbackElement!.textContent = "Incorrect password.";
+        }
       } else {
-        feedbackElement!.textContent = "Incorrect password.";
+        feedbackElement!.textContent = "User not found.";
       }
     } else {
       feedbackElement!.textContent =
