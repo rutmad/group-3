@@ -12,16 +12,12 @@ class ParkingController {
 
     const goToRegisterButton = document.getElementById("goToRegister_button");
     goToRegisterButton!.addEventListener("click", () => {
-      const vehicleNumber = this.parkingView.getVehicleNumber();
       this.parkingView.showPage("page2");
-      const vehicleNumberInput = document.getElementById(
-        "license-plate-number"
-      ) as HTMLInputElement;
-      vehicleNumberInput.value = vehicleNumber;
     });
 
     const register_button = document.getElementById("register_button");
     register_button!.addEventListener("click", () => {
+      this.addUser();
       this.parkingView.showPage("page1");
     });
 
@@ -94,12 +90,12 @@ class ParkingController {
     }, 1000);
   }
 
-  handleRegistration() {
-    const usernameInput = document.getElementById(
+  addUser() {
+    const userNameInput = document.getElementById(
       "user-name"
     ) as HTMLInputElement;
     const passwordInput = document.getElementById(
-      "password"
+      "user-password"
     ) as HTMLInputElement;
     const addressInput = document.getElementById("address") as HTMLInputElement;
     const licensePlateInput = document.getElementById(
@@ -109,30 +105,27 @@ class ParkingController {
       "credit-card"
     ) as HTMLInputElement;
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-
+    const newUserData: UserData = {
+      uid: Math.floor(Math.random() * 10000),
+      userName: userNameInput.value,
+      password: passwordInput.value,
+      address: addressInput.value,
+      licensePlate: Number(licensePlateInput.value),
+      creditCard: Number(creditCardInput.value),
+    };
+    userData.push(newUserData);
+    localStorage.setItem("userData", JSON.stringify(userData));
+    const frm = document.getElementById("form") as HTMLFormElement;
+    frm.addEventListener("submit", addUser);
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      userData = JSON.parse(storedUserData);
+    }
     this.parkingView.showPage("page1");
   }
 
-  initialize() {
-    const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
-
-    if (!storedUsername || !storedPassword) {
-      const feedbackElement = document.getElementById("feedback");
-      feedbackElement!.textContent =
-        "Registration required. Please register on the registration page.";
-    }
-  }
-
   handleLogin() {
-    const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
-
+    const storedUserData = localStorage.getItem("userData");
     const usernameInput = document.getElementById(
       "username"
     ) as HTMLInputElement;
@@ -144,11 +137,21 @@ class ParkingController {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    if (username === storedUsername) {
-      if (password === storedPassword) {
-        this.parkingView.showPage("page3");
+    if (storedUserData) {
+      const userData = JSON.parse(storedUserData);
+
+      const foundUser = userData.find(
+        (bobo: UserData) => bobo.userName === username
+      );
+
+      if (foundUser) {
+        if (password === foundUser.password) {
+          this.parkingView.showPage("page3");
+        } else {
+          feedbackElement!.textContent = "Incorrect password.";
+        }
       } else {
-        feedbackElement!.textContent = "Incorrect password.";
+        feedbackElement!.textContent = "User not found.";
       }
     } else {
       feedbackElement!.textContent =

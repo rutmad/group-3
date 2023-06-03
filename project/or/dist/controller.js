@@ -7,13 +7,11 @@ var ParkingController = /** @class */ (function () {
         this.timerView = new TimerView();
         var goToRegisterButton = document.getElementById("goToRegister_button");
         goToRegisterButton.addEventListener("click", function () {
-            var vehicleNumber = _this.parkingView.getVehicleNumber();
             _this.parkingView.showPage("page2");
-            var vehicleNumberInput = document.getElementById("license-plate-number");
-            vehicleNumberInput.value = vehicleNumber;
         });
         var register_button = document.getElementById("register_button");
         register_button.addEventListener("click", function () {
+            _this.addUser();
             _this.parkingView.showPage("page1");
         });
         var loginButton = document.getElementById("submitBtn");
@@ -68,41 +66,50 @@ var ParkingController = /** @class */ (function () {
             _this.updateTimer();
         }, 1000);
     };
-    ParkingController.prototype.handleRegistration = function () {
-        var usernameInput = document.getElementById("user-name");
-        var passwordInput = document.getElementById("password");
+    ParkingController.prototype.addUser = function () {
+        var userNameInput = document.getElementById("user-name");
+        var passwordInput = document.getElementById("user-password");
         var addressInput = document.getElementById("address");
         var licensePlateInput = document.getElementById("license-plate-number");
         var creditCardInput = document.getElementById("credit-card");
-        var username = usernameInput.value;
-        var password = passwordInput.value;
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
+        var newUserData = {
+            uid: Math.floor(Math.random() * 10000),
+            userName: userNameInput.value,
+            password: passwordInput.value,
+            address: addressInput.value,
+            licensePlate: Number(licensePlateInput.value),
+            creditCard: Number(creditCardInput.value)
+        };
+        userData.push(newUserData);
+        localStorage.setItem("userData", JSON.stringify(userData));
+        var frm = document.getElementById("form");
+        frm.addEventListener("submit", addUser);
+        var storedUserData = localStorage.getItem("userData");
+        if (storedUserData) {
+            userData = JSON.parse(storedUserData);
+        }
         this.parkingView.showPage("page1");
     };
-    ParkingController.prototype.initialize = function () {
-        var storedUsername = localStorage.getItem("username");
-        var storedPassword = localStorage.getItem("password");
-        if (!storedUsername || !storedPassword) {
-            var feedbackElement = document.getElementById("feedback");
-            feedbackElement.textContent =
-                "Registration required. Please register on the registration page.";
-        }
-    };
     ParkingController.prototype.handleLogin = function () {
-        var storedUsername = localStorage.getItem("username");
-        var storedPassword = localStorage.getItem("password");
+        var storedUserData = localStorage.getItem("userData");
         var usernameInput = document.getElementById("username");
         var passwordInput = document.getElementById("password");
         var feedbackElement = document.getElementById("feedback");
         var username = usernameInput.value;
         var password = passwordInput.value;
-        if (username === storedUsername) {
-            if (password === storedPassword) {
-                this.parkingView.showPage("page3");
+        if (storedUserData) {
+            var userData = JSON.parse(storedUserData);
+            var foundUser = userData.find(function (bobo) { return bobo.userName === username; });
+            if (foundUser) {
+                if (password === foundUser.password) {
+                    this.parkingView.showPage("page3");
+                }
+                else {
+                    feedbackElement.textContent = "Incorrect password.";
+                }
             }
             else {
-                feedbackElement.textContent = "Incorrect password.";
+                feedbackElement.textContent = "User not found.";
             }
         }
         else {
