@@ -71,3 +71,23 @@ class UserData {
 
 let userData: UserData[] = [];
 ///////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////LOGIN////////////////////////////////////////
+function login(userName, password) {
+  console.log(userName + password);
+  const loggedInUser = currentData.filter(
+    (user) => user.userName === userName && user.password === password
+  );
+  console.log(loggedInUser);
+  if (loggedInUser.length === 0) {
+    return {
+      message: "username or password is incorrect.",
+      user: null,
+    };
+  }
+  return {
+    message: "Logged in successfully.",
+    user: loggedInUser[0],
+  };
+}
+//////////////////////////////////////////////////////////////////////////////////

@@ -81,3 +81,24 @@ btn.addEventListener("click", function (e) {
     addUser(e);
 });
 ///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////LOGIN///////////////////////////////////
+if (localStorage.getItem("user")) {
+    window.location.href = "http://localhost:5500/project/page-3/parking.html";
+}
+var currentData = JSON.parse(localStorage.getItem("users") || "[]");
+var submitBtn = document.getElementById("submitBtn");
+submitBtn.addEventListener("click", handleSubmit);
+function handleSubmit(e) {
+    console.log("submit");
+    e.preventDefault();
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var loginResult = login(username.value, password.value);
+    if (loginResult.user) {
+        localStorage.setItem("user", JSON.stringify(loginResult.user));
+        window.location.href = "http://localhost:5500/project/page-3/parking.html";
+    }
+    var feedback = document.getElementById("feedback");
+    feedback.innerText = loginResult.message;
+}
+//////////////////////////////////////////////////////////////////
