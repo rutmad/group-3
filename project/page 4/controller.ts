@@ -109,3 +109,27 @@ btn.addEventListener("click", (e) => {
   addUser(e);
 });
 ///////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////LOGIN///////////////////////////////////
+if (localStorage.getItem("user")) {
+  window.location.href = "http://localhost:5500/project/page-3/parking.html";
+}
+
+const currentData = JSON.parse(localStorage.getItem("users") || "[]");
+const submitBtn = document.getElementById("submitBtn") as HTMLButtonElement;
+submitBtn.addEventListener("click", handleSubmit);
+
+function handleSubmit(e) {
+  console.log("submit");
+  e.preventDefault();
+  const username = document.getElementById("username") as HTMLInputElement;
+  const password = document.getElementById("password") as HTMLInputElement;
+  const loginResult = login(username.value, password.value);
+  if (loginResult.user) {
+    localStorage.setItem("user", JSON.stringify(loginResult.user));
+    window.location.href = "http://localhost:5500/project/page-3/parking.html";
+  }
+  const feedback = document.getElementById("feedback") as HTMLParagraphElement;
+  feedback.innerText = loginResult.message;
+}
+//////////////////////////////////////////////////////////////////
