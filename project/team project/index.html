@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div id="page1" class="page">
+    <div id="loginPage" class="page">
       <div class="form-box login">
         <h2>Login</h2>
         <form action="#">
@@ -56,7 +56,7 @@
         <p id="feedback"></p>
       </div>
     </div>
-    <div id="page2" class="page" style="display: none">
+    <div id="registrationPage" class="page" style="display: none">
       <div class="form-box login">
         <form id="form" action="#">
           <div class="input-box">
@@ -106,7 +106,7 @@
       </div>
     </div>
 
-    <div id="page3" class="page" style="display: none">
+    <div id="parkingActivationPage" class="page" style="display: none">
       <h1 class="logo">Select parking</h1>
       <div class="greeting">
         <p id="welcome-message"></p>
@@ -147,11 +147,13 @@
       </div>
     </div>
 
-    <div id="page4" class="page" style="display: none">
-      <h1>Parking Summary</h1>
+    <div id="parkingSummaryPage" class="page" style="display: none">
+      <h1 id="summary">Parking Summary</h1>
       <div class="parking-info">
-        <p>Cost: <span id="cost"></span></p>
-        <p>Time in the parking lot: <span id="time"></span></p>
+        <p id="cost">Cost:</p>
+        <p id="time">total Time:</p>
+        <h2 id="thank-you">Thank you for using our service</h2>
+        <img id="smiley" src="./image/smily.png" width="50px" height="50px" />
       </div>
     </div>
   </body>

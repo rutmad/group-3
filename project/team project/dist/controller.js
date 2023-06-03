@@ -7,12 +7,12 @@ var ParkingController = /** @class */ (function () {
         this.timerView = new TimerView();
         var goToRegisterButton = document.getElementById("goToRegister_button");
         goToRegisterButton.addEventListener("click", function () {
-            _this.parkingView.showPage("page2");
+            _this.parkingView.showPage("registrationPage");
         });
         var register_button = document.getElementById("register_button");
         register_button.addEventListener("click", function () {
             _this.addUser();
-            _this.parkingView.showPage("page1");
+            _this.parkingView.showPage("loginPage");
         });
         var loginButton = document.getElementById("submitBtn");
         loginButton.addEventListener("click", function () {
@@ -48,11 +48,12 @@ var ParkingController = /** @class */ (function () {
     };
     ParkingController.prototype.displayParkingSummary = function (totalTime, totalCost) {
         totalCost = totalTime * 0.01;
-        this.parkingView.showPage("page4");
+        this.parkingView.showPage("parkingSummaryPage");
         var costElement = document.getElementById("cost");
         var timeElement = document.getElementById("time");
         costElement.textContent = "Total cost: $" + totalCost.toFixed(2);
-        timeElement.textContent = this.timerView.getFormattedTime(totalTime);
+        timeElement.textContent =
+            "Total time: " + this.timerView.getFormattedTime(totalTime);
         this.timerModel.resetTimer();
         this.parkingView.enableCitySelect();
         this.parkingView.enableVehicleNumberInput();
@@ -88,7 +89,7 @@ var ParkingController = /** @class */ (function () {
         if (storedUserData) {
             userData = JSON.parse(storedUserData);
         }
-        this.parkingView.showPage("page1");
+        this.parkingView.showPage("loginPage");
     };
     ParkingController.prototype.handleLogin = function () {
         var storedUserData = localStorage.getItem("userData");
@@ -102,7 +103,7 @@ var ParkingController = /** @class */ (function () {
             var foundUser = userData.find(function (bobo) { return bobo.userName === username; });
             if (foundUser) {
                 if (password === foundUser.password) {
-                    this.parkingView.showPage("page3");
+                    this.parkingView.showPage("parkingActivationPage");
                 }
                 else {
                     feedbackElement.textContent = "Incorrect password.";

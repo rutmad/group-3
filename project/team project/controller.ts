@@ -12,13 +12,13 @@ class ParkingController {
 
     const goToRegisterButton = document.getElementById("goToRegister_button");
     goToRegisterButton!.addEventListener("click", () => {
-      this.parkingView.showPage("page2");
+      this.parkingView.showPage("registrationPage");
     });
 
     const register_button = document.getElementById("register_button");
     register_button!.addEventListener("click", () => {
       this.addUser();
-      this.parkingView.showPage("page1");
+      this.parkingView.showPage("loginPage");
     });
 
     const loginButton = document.getElementById("submitBtn");
@@ -68,13 +68,14 @@ class ParkingController {
   displayParkingSummary(totalTime, totalCost) {
     totalCost = totalTime * 0.01;
 
-    this.parkingView.showPage("page4");
+    this.parkingView.showPage("parkingSummaryPage");
 
     const costElement = document.getElementById("cost");
     const timeElement = document.getElementById("time");
 
     costElement!.textContent = "Total cost: $" + totalCost.toFixed(2);
-    timeElement!.textContent = this.timerView.getFormattedTime(totalTime);
+    timeElement!.textContent =
+      "Total time: " + this.timerView.getFormattedTime(totalTime);
 
     this.timerModel.resetTimer();
     this.parkingView.enableCitySelect();
@@ -121,7 +122,7 @@ class ParkingController {
     if (storedUserData) {
       userData = JSON.parse(storedUserData);
     }
-    this.parkingView.showPage("page1");
+    this.parkingView.showPage("loginPage");
   }
 
   handleLogin() {
@@ -146,7 +147,7 @@ class ParkingController {
 
       if (foundUser) {
         if (password === foundUser.password) {
-          this.parkingView.showPage("page3");
+          this.parkingView.showPage("parkingActivationPage");
         } else {
           feedbackElement!.textContent = "Incorrect password.";
         }
