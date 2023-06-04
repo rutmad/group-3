@@ -65,7 +65,10 @@
             register
           </button>
           <button type="button" id="activityTimeButton" class="activityTimeB">
-            activityTime
+            activity Time
+          </button>
+          <button type="button" id="parkingPriceButton" class="activityTimeB">
+            parking Price List
           </button>
         </form>
         <p id="feedback"></p>
@@ -130,16 +133,16 @@
         <label for="city">Select City:</label>
         <select id="city">
           <option value="" disabled selected></option>
-          <option value="1">Rishon Lezion</option>
-          <option value="2">Bat Yam</option>
-          <option value="3">Jerusalem</option>
-          <option value="4">Tel Aviv</option>
-          <option value="5">Petah Tikva</option>
-          <option value="6">Holon</option>
-          <option value="7">Nahariya</option>
-          <option value="8">Rehovot</option>
-          <option value="9">Yavne</option>
-          <option value="10">Modyin</option>
+          <option value="0.01">Rishon Lezion</option>
+          <option value="0.02">Bat Yam</option>
+          <option value="0.03">Jerusalem</option>
+          <option value="0.04">Tel Aviv</option>
+          <option value="0.05">Petah Tikva</option>
+          <option value="0.06">Holon</option>
+          <option value="0.07">Nahariya</option>
+          <option value="0.08">Rehovot</option>
+          <option value="0.09">Yavne</option>
+          <option value="0.1">Modyin</option>
         </select>
       </div>
       <div class="vehicleNumber">
@@ -161,7 +164,6 @@
         />
       </div>
     </div>
-
     <div id="parkingSummaryPage" class="page" style="display: none">
       <h1 id="summary">Parking Summary</h1>
       <div class="parkingInfo">
@@ -173,34 +175,37 @@
     </div>
     <div id="activityTimePage" class="page" style="display: none">
       <div class="container__box1">
-          <h2 class="container__box1__h2">Activity time</h2>
-          <p class="container__box1__p">
-            Sunday-Thursday: 7:00-21:00<br />
-            Friday: 8:00-15:00<br />
-            A telephone response will be provided during business hours
-          </p>
-        </div>
-
-    <section>
-      <div>
-        <h2></h2>
-        <p></p>
+        <h2 class="container__box1__h2">Activity time</h2>
+        <p class="container__box1__p">
+          Sunday-Thursday: 7:00-21:00<br />
+          Friday: 8:00-15:00<br />
+          A telephone response will be provided during business hours
+        </p>
       </div>
-    </section>
-
-    <section>
-    
-
-        <div class="container__box2">
-          <h2 class="container__box2__h2">Contact</h2>
-          <p class="container__box2__p">
-            We will be happy to help you with any question<br />
-            Phone: 03-9777777<br />
-            Email: parking@gmail.com
-          </p>
-        </div>
+      <div id="parkingPriceListPage" class="page" style="display: none">
+        <ol class="parkingPrice">
+          <li>Rishon Lezion - $0.01</li>
+          <li>Bat Yam - $0.02</li>
+          <li>Jerusalem - $0.03</li>
+          <li>Tel Aviv - $0.04</li>
+          <li>Petah Tikva - $0.05</li>
+          <li>Holon - $0.06</li>
+          <li>Nahariya - $0.07</li>
+          <li>Rehovot - $0.08</li>
+          <li>Yavne - $0.09</li>
+          <li>Modyin - $0.10</li>
+        </ol>
       </div>
-      <div id="service"></div>
-    </section>
+
+      <div class="container__box2">
+        <h2 class="container__box2__h2">Contact</h2>
+        <p class="container__box2__p">
+          We will be happy to help you with any question<br />
+          Phone: 03-9777777<br />
+          Email: parking@gmail.com
+        </p>
+      </div>
+    </div>
+    <div id="service"></div>
   </body>
 </html>

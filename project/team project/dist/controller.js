@@ -18,6 +18,10 @@ var ParkingController = /** @class */ (function () {
         Activity.addEventListener("click", function () {
             _this.parkingView.showPage("activityTimePage");
         });
+        var parkingPrice = document.getElementById("parkingPriceButton");
+        parkingPrice.addEventListener("click", function () {
+            _this.parkingView.showPage("parkingPriceListPage");
+        });
         var loginButton = document.getElementById("submitBtn");
         loginButton.addEventListener("click", function () {
             _this.handleLogin();
@@ -31,6 +35,7 @@ var ParkingController = /** @class */ (function () {
     }
     ParkingController.prototype.startParking = function () {
         var selectedCity = this.parkingView.citySelect.value;
+        console.log(selectedCity);
         var vehicleNumber = this.parkingView.vehicleNumberInput.value;
         if (selectedCity && vehicleNumber) {
             this.parkingView.citySelect.disabled = true;
@@ -51,7 +56,8 @@ var ParkingController = /** @class */ (function () {
         this.displayParkingSummary(totalTime, "");
     };
     ParkingController.prototype.displayParkingSummary = function (totalTime, totalCost) {
-        totalCost = totalTime * 0.01;
+        var selectedCity = this.parkingView.citySelect.value;
+        totalCost = totalTime * Number(selectedCity);
         this.parkingView.showPage("parkingSummaryPage");
         var costElement = document.getElementById("cost");
         var timeElement = document.getElementById("time");
