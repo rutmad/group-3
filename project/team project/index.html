@@ -38,30 +38,36 @@
             <span class="inputBox__icon"
               ><ion-icon name="mail"></ion-icon
             ></span>
-            <input id="username" type="username" required />
             <label class="inputBox__label">username</label>
+            <input id="username" type="username" required />
+           
           </div>
           <div class="inputBox">
             <span class="inputBox__icon"
               ><ion-icon name="lock-closed"></ion-icon
             ></span>
-            <input id="password" type="password" required />
-            <label class="inputBox__label">Password</label>
+            <label class="inputBox__label__password">Password</label>
+            <input class="input-Box__" id="password" type="password" required />
+            
           </div>
-          <input id="submitBtn" type="submit" value="Login" class="btn" />
-          <button type="button" id="goToRegister_button" class="btn">
+          <input id="submitBtn" type="submit" value="Login" class="btn-login" />
+          <button type="button" id="goToRegister_button" class="btn-register">
             register
           </button>
-          <button type="button" id="activityTimeButton" class="activityTimeB">
-            activity Time
-          </button>
+          <div class="btn-menu">
           <button type="button" id="parkingPriceButton" class="parkingPriceB">
-            parking Price List
+            price list
           </button>
+          <button  type="button"  id="activityTimeButton"  class="activityTimeB" >
+            contact
+          </button>
+        </div>
         </form>
         <p id="feedback"></p>
       </div>
     </div>
+
+
     <div id="registrationPage" class="page" style="display: none">
       <div class="formBox formBox--login">
         <form id="form" action="#">

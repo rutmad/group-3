@@ -193,17 +193,86 @@ body {
   color: #1a9898;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 .container__box2__h2 {
   color: #1a9898;
   margin-top: 20px;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 .container__box1__p, .container__box2__p {
   font-weight: 700;
+  text-align: center;
 }
 
-.formBox-login {
+.formBox__title {
   text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.inputBox {
+  text-align: center;
+  margin-top: 10px;
+}
+.inputBox__label {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+.inputBox__label__password {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 23px;
+  margin-bottom: 70px;
+}
+
+.btn-login,
+.btn-register {
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 50px;
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 60px;
+  background-color: #1a9898;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-menu {
+  margin-top: 100px;
+  border-radius: 50px;
+  font-size: larger;
+}
+.btn-menu .parkingPriceB,
+.btn-menu .activityTimeB {
+  align-items: center;
+  font-size: 15px;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 50px;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e5d5bf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
