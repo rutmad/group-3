@@ -13,14 +13,14 @@ body {
   margin-top: 50px;
   margin-left: 50px;
 }
+.mainLogo__img {
+  margin-left: 100px;
+  margin-top: auto;
+}
 .mainLogo__p {
   margin-left: 80px;
   font-size: 2.5rem;
   margin-top: -50px;
-}
-.mainLogo__img {
-  margin-left: 100px;
-  margin-top: auto;
 }
 .mainLogo__title {
   margin-bottom: 40px;
