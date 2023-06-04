@@ -13,37 +13,34 @@ body {
   margin-top: 50px;
   margin-left: 50px;
 }
-.mainLogo__img {
-  margin-left: 100px;
-  margin-top: auto;
-}
-.mainLogo__p {
+.mainLogo__title {
   margin-left: 80px;
   font-size: 2.5rem;
   margin-top: -50px;
 }
-.mainLogo__title {
+.mainLogo__img {
+  margin-left: 10px;
+  margin-top: auto;
+}
+.mainLogo__text__heading {
   margin-bottom: 40px;
   font-weight: 900;
   margin-left: 40px;
   margin-top: 80px;
   color: #1a9898;
 }
-.mainLogo__text__heading {
+.mainLogo__text__subheading {
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: bold;
   margin-left: 40px;
   color: #3f8484;
 }
-.mainLogo__text__subheading {
+.mainLogo__text__p {
   line-height: 2;
   font-size: 18px;
   margin-left: 40px;
   font-weight: 500;
-}
-.mainLogo__text__p {
-  margin-top: 10px;
 }
 
 .page {
@@ -54,7 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 2;
-  margin: -330px 765px;
+  margin: -450px 765px;
   padding: 20px;
   background: transparent;
   border-width: 2px;
@@ -188,11 +185,11 @@ body {
   margin-top: 20px;
 }
 
-#activityTimePage {
+.container {
   display: flex;
   justify-content: space-between;
 }
-#activityTimePage__box1, #activityTimePage__box2 {
+.container__box1, .container__box2 {
   width: 400px;
   height: 300px;
   flex: 1;
@@ -210,21 +207,21 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode";
   margin-bottom: 300px;
 }
-#activityTimePage__box1__h2, #activityTimePage__box2__h2 {
+.container__box1__h2, .container__box2__h2 {
   text-align: center;
   text-decoration: underline;
   font-size: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-#activityTimePage__box1 {
+.container__box1 {
   margin: 850px 100px 100px 90px;
   font-weight: bold;
 }
-#activityTimePage__box2 {
+.container__box2 {
   margin: 850px 76px 100px 76px;
 }
-#activityTimePage__box1__p, #activityTimePage__box2__p {
+.container__box1__p, .container__box2__p {
   line-height: 2.5;
   font-size: larger;
 }
