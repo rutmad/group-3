@@ -26,6 +26,11 @@ class ParkingController {
       this.parkingView.showPage("activityTimePage");
     });
 
+    const parkingPrice = document.getElementById("parkingPriceButton");
+    parkingPrice!.addEventListener("click", () => {
+      this.parkingView.showPage("parkingPriceListPage");
+    });
+
     const loginButton = document.getElementById("submitBtn");
     loginButton!.addEventListener("click", () => {
       this.handleLogin();
@@ -42,6 +47,8 @@ class ParkingController {
 
   startParking() {
     const selectedCity = this.parkingView.citySelect.value;
+    console.log(selectedCity);
+
     const vehicleNumber = this.parkingView.vehicleNumberInput.value;
 
     if (selectedCity && vehicleNumber) {
@@ -71,7 +78,8 @@ class ParkingController {
   }
 
   displayParkingSummary(totalTime, totalCost) {
-    totalCost = totalTime * 0.01;
+    const selectedCity = this.parkingView.citySelect.value;
+    totalCost = totalTime * Number(selectedCity);
 
     this.parkingView.showPage("parkingSummaryPage");
 

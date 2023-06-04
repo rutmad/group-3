@@ -53,7 +53,10 @@
             register
           </button>
           <button type="button" id="activityTimeButton" class="activityTimeB">
-            activityTime
+            activity Time
+          </button>
+          <button type="button" id="parkingPriceButton" class="activityTimeB">
+            parking Price List
           </button>
         </form>
         <p id="feedback"></p>
@@ -118,16 +121,16 @@
         <label for="city">Select City:</label>
         <select id="city">
           <option value="" disabled selected></option>
-          <option value="1">Rishon Lezion</option>
-          <option value="2">Bat Yam</option>
-          <option value="3">Jerusalem</option>
-          <option value="4">Tel Aviv</option>
-          <option value="5">Petah Tikva</option>
-          <option value="6">Holon</option>
-          <option value="7">Nahariya</option>
-          <option value="8">Rehovot</option>
-          <option value="9">Yavne</option>
-          <option value="10">Modyin</option>
+          <option value="0.01">Rishon Lezion</option>
+          <option value="0.02">Bat Yam</option>
+          <option value="0.03">Jerusalem</option>
+          <option value="0.04">Tel Aviv</option>
+          <option value="0.05">Petah Tikva</option>
+          <option value="0.06">Holon</option>
+          <option value="0.07">Nahariya</option>
+          <option value="0.08">Rehovot</option>
+          <option value="0.09">Yavne</option>
+          <option value="0.1">Modyin</option>
         </select>
       </div>
       <div class="vehicleNumber">
@@ -149,7 +152,6 @@
         />
       </div>
     </div>
-
     <div id="parkingSummaryPage" class="page" style="display: none">
       <h1 id="summary">Parking Summary</h1>
       <div class="parkingInfo">
