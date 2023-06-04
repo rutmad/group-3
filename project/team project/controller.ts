@@ -21,6 +21,11 @@ class ParkingController {
       this.addUser();
     });
 
+    const Activity = document.getElementById("activityTimeButton");
+    Activity!.addEventListener("click", () => {
+      this.parkingView.showPage("activityTimePage");
+    });
+
     const loginButton = document.getElementById("submitBtn");
     loginButton!.addEventListener("click", () => {
       this.handleLogin();

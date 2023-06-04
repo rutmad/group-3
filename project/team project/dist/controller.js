@@ -14,6 +14,10 @@ var ParkingController = /** @class */ (function () {
             _this.parkingView.showPage("loginPage");
             _this.addUser();
         });
+        var Activity = document.getElementById("activityTimeButton");
+        Activity.addEventListener("click", function () {
+            _this.parkingView.showPage("activityTimePage");
+        });
         var loginButton = document.getElementById("submitBtn");
         loginButton.addEventListener("click", function () {
             _this.handleLogin();

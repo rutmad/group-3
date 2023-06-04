@@ -188,11 +188,11 @@ body {
   margin-top: 20px;
 }
 
-.container {
+#activityTimePage {
   display: flex;
   justify-content: space-between;
 }
-.container__box1, .container__box2 {
+#activityTimePage__box1, #activityTimePage__box2 {
   width: 400px;
   height: 300px;
   flex: 1;
@@ -210,21 +210,21 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode";
   margin-bottom: 300px;
 }
-.container__box1__h2, .container__box2__h2 {
+#activityTimePage__box1__h2, #activityTimePage__box2__h2 {
   text-align: center;
   text-decoration: underline;
   font-size: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.container__box1 {
+#activityTimePage__box1 {
   margin: 850px 100px 100px 90px;
   font-weight: bold;
 }
-.container__box2 {
+#activityTimePage__box2 {
   margin: 850px 76px 100px 76px;
 }
-.container__box1__p, .container__box2__p {
+#activityTimePage__box1__p, #activityTimePage__box2__p {
   line-height: 2.5;
   font-size: larger;
 }
