@@ -10,12 +10,6 @@
     <script src="./dist/index.js" defer></script>
   </head>
   <body>
-    <nav class="navigation">
-      <a href="#">About us</a>
-      <a href="#service">Customer Service</a>
-      <a href="#">Terms of Use</a>
-    </nav>
-
     <div class="mainLogo">
       <img
         class="mainLogo__img"
@@ -37,7 +31,7 @@
     </div>
 
     <div id="loginPage" class="page">
-      <div class="formBox formBox--login">
+      <div class="formBox-login">
         <h2 class="formBox__title">Login</h2>
         <form action="#">
           <div class="inputBox">
@@ -53,12 +47,6 @@
             ></span>
             <input id="password" type="password" required />
             <label class="inputBox__label">Password</label>
-          </div>
-          <div class="rememberForgot">
-            <label class="rememberForgot__label"
-              ><input type="checkbox" />Remember me</label
-            >
-            <a href="#" class="rememberForgot__link">Forgot Password?</a>
           </div>
           <input id="submitBtn" type="submit" value="Login" class="btn" />
           <button type="button" id="goToRegister_button" class="btn">
@@ -171,36 +159,30 @@
         <img id="smiley" src="./image/smily.png" width="50px" height="50px" />
       </div>
     </div>
-    <div id="activityTimePage" class="page" style="display: none">
-      <div class="container__box1">
-          <h2 class="container__box1__h2">Activity time</h2>
-          <p class="container__box1__p">
-            Sunday-Thursday: 7:00-21:00<br />
-            Friday: 8:00-15:00<br />
-            A telephone response will be provided during business hours
-          </p>
-        </div>
 
     <section>
-      <div>
-        <h2></h2>
-        <p></p>
-      </div>
-    </section>
+      <div id="activityTimePage" class="page" style="display: none">
+        <div class="container">
+          <div class="container__box1">
+            <h2 class="container__box1__h2">Activity time</h2>
+            <p class="container__box1__p">
+              Sunday-Thursday: 7:00-21:00<br />
+              Friday: 8:00-15:00<br />
+              A telephone response will be provided during business hours
+            </p>
+          </div>
 
-    <section>
-    
-
-        <div class="container__box2">
-          <h2 class="container__box2__h2">Contact</h2>
-          <p class="container__box2__p">
-            We will be happy to help you with any question<br />
-            Phone: 03-9777777<br />
-            Email: parking@gmail.com
-          </p>
+          <div class="container__box2">
+            <h2 class="container__box2__h2">Contact</h2>
+            <p class="container__box2__p">
+              We will be happy to help you with any question<br />
+              Phone: 03-9777777<br />
+              Email: parking@gmail.com
+            </p>
+          </div>
         </div>
+        <div id="service"></div>
       </div>
-      <div id="service"></div>
     </section>
   </body>
 </html>
