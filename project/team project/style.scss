@@ -60,7 +60,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 2;
-  margin: -410px 765px;
+  margin: -330px 765px;
   padding: 20px;
   background: transparent;
   border-width: 2px;
@@ -192,4 +192,48 @@ body {
 #smiley {
   align-items: center;
   margin-top: 20px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  &__box1,
+  &__box2 {
+    width: 400px;
+    height: 300px;
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    border-style: dashed;
+    border-color: #1a9898;
+    margin: 20px 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    flex-grow: 1;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode";
+    margin-bottom: 300px;
+  }
+  &__box1__h2,
+  &__box2__h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &__box1 {
+    margin: 850px 100px 100px 90px;
+    font-weight: bold;
+  }
+  &__box2 {
+    margin: 850px 76px 100px 76px;
+  }
+  &__box1__p,
+  &__box2__p {
+    line-height: 2.5;
+    font-size: larger;
+  }
 }
