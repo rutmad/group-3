@@ -11,8 +11,8 @@ var ParkingController = /** @class */ (function () {
         });
         var register_button = document.getElementById("register_button");
         register_button.addEventListener("click", function () {
-            _this.addUser();
             _this.parkingView.showPage("loginPage");
+            _this.addUser();
         });
         var loginButton = document.getElementById("submitBtn");
         loginButton.addEventListener("click", function () {

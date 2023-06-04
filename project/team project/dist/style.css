@@ -18,30 +18,32 @@ body {
   font-size: 2.5rem;
   margin-top: -50px;
 }
-.mainLogo__img__car {
+.mainLogo__img {
   margin-left: 100px;
   margin-top: auto;
 }
-.mainLogo__text__h1 {
+.mainLogo__title {
   margin-bottom: 40px;
   font-weight: 900;
   margin-left: 40px;
   margin-top: 80px;
   color: #1a9898;
 }
-.mainLogo__text__h2 {
+.mainLogo__text__heading {
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: bold;
   margin-left: 40px;
   color: #3f8484;
 }
-.mainLogo__text__p {
+.mainLogo__text__subheading {
   line-height: 2;
   font-size: 18px;
   margin-left: 40px;
   font-weight: 500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mainLogo__text__p {
+  margin-top: 10px;
 }
 
 .page {
@@ -69,11 +71,11 @@ body {
   color: #333;
 }
 
-.city-selection {
+.citySelection {
   margin-top: 20px;
 }
 
-.city-selection label {
+.citySelection label {
   display: block;
   margin-bottom: 5px;
   color: #333;
@@ -81,7 +83,7 @@ body {
   font-size: 18px;
 }
 
-.city-selection select {
+.citySelection select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -89,31 +91,31 @@ body {
   font-size: 15px;
 }
 
-.vehicle-number {
+.vehicleNumber {
   margin-top: 20px;
   font-size: 18px;
 }
 
-.vehicle-number label {
+.vehicleNumber label {
   display: block;
   margin-bottom: 5px;
   color: #333;
   font-weight: bold;
 }
 
-.vehicle-number input {
+.vehicleNumber input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.parking-buttons {
+.parkingButtons {
   margin-top: 20px;
   text-align: center;
 }
 
-.parking-buttons button {
+.parkingButtons button {
   height: 50px;
   font-size: 20px;
   display: inline-block;
@@ -126,13 +128,14 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.parking-buttons button:hover {
+
+.parkingButtons button:hover {
   background-color: #bfc9d4;
   color: #1a9898;
   font-weight: bold;
 }
 
-.parking-buttons button:disabled {
+.parkingButtons button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
@@ -159,25 +162,28 @@ body {
   margin-top: 50px;
 }
 
-.parking-info {
+.parkingInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
 }
-.parking-info p {
+
+.parkingInfo p {
   text-align: center;
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
   color: #333;
 }
-.parking-info #thank-you {
+
+#thank-you {
   text-align: center;
   margin-top: 20px;
   color: #c9a77a;
 }
-.parking-info #smiley {
+
+#smiley {
   align-items: center;
   margin-top: 20px;
 }

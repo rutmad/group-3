@@ -1,46 +1,241 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+// }
+// body {
+//   background-color: white;
+// }
+// .mainLogo {
+//   margin-top: 50px;
+//   margin-left: 50px;
+//   &__p {
+//     margin-left: 80px;
+//     font-size: 2.5rem;
+//     margin-top: -50px;
+//   }
+//   &__img__car {
+//     margin-left: 100px;
+//     margin-top: auto;
+//   }
+//   &__text__h1 {
+//     margin-bottom: 40px;
+//     font-weight: 900;
+//     margin-left: 40px;
+//     margin-top: 80px;
+//     color: #1a9898;
+//   }
+//   &__text__h2 {
+//     margin-bottom: 20px;
+//     font-size: 22px;
+//     font-weight: bold;
+//     margin-left: 40px;
+//     color: #3f8484;
+//   }
+//   &__text__p {
+//     line-height: 2;
+//     font-size: 18px;
+//     margin-left: 40px;
+//     font-weight: 500;
+//     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+//   }
+// }
+// .page {
+//   width: 400px;
+//   height: 507px;
+//   backdrop-filter: blur(20px);
+//   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
+//   display: flex;
+//   flex-direction: column;
+//   line-height: 2;
+//   margin: -410px 765px;
+//   padding: 20px;
+//   background: transparent;
+//   border-width: 2px;
+//   border-style: solid;
+//   border-color: rgba(255, 255, 255, 0.5);
+//   border-image: initial;
+//   border-radius: 20px;
+// }
+
+// .logo {
+//   margin-top: 30px;
+//   text-align: center;
+//   font-size: 28px;
+//   color: #333;
+// }
+
+// .city-selection {
+//   margin-top: 20px;
+// }
+
+// .city-selection label {
+//   display: block;
+//   margin-bottom: 5px;
+//   color: #333;
+//   font-weight: bold;
+//   font-size: 18px;
+// }
+
+// .city-selection select {
+//   width: 100%;
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 3px;
+//   font-size: 15px;
+// }
+
+// .vehicle-number {
+//   margin-top: 20px;
+//   font-size: 18px;
+// }
+
+// .vehicle-number label {
+//   display: block;
+//   margin-bottom: 5px;
+//   color: #333;
+//   font-weight: bold;
+// }
+
+// .vehicle-number input {
+//   width: 100%;
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 3px;
+// }
+
+// .parking-buttons {
+//   margin-top: 20px;
+//   text-align: center;
+// }
+
+// .parking-buttons button {
+//   height: 50px;
+//   font-size: 20px;
+//   display: inline-block;
+//   padding: 10px 20px;
+//   margin-top: 10px;
+//   background-color: #1a9898;
+//   color: #fff;
+//   border: none;
+//   border-radius: 20px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+//   &:hover {
+//     background-color: #bfc9d4;
+//     color: #1a9898;
+//     font-weight: bold;
+//   }
+// }
+
+// .parking-buttons button:disabled {
+//   background-color: #ccc;
+//   cursor: not-allowed;
+// }
+
+// .timer {
+//   margin-top: 20px;
+//   text-align: center;
+// }
+// .timer__img {
+//   margin-left: 165px;
+//   margin-top: -79px;
+// }
+
+// .timer p {
+//   font-weight: bold;
+//   color: #333;
+//   margin-right: 68px;
+// }
+
+// #summary {
+//   color: #1a9898;
+//   text-align: center;
+//   margin-top: 50px;
+// }
+
+// .parking-info {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin-top: 20px;
+
+//   p {
+//     text-align: center;
+//     margin-bottom: 20px;
+//     // font-size: large;
+//     font-size: 18px;
+//     font-weight: bold;
+//     color: #333;
+//   }
+
+//   #thank-you {
+//     text-align: center;
+//     margin-top: 20px;
+//     color: rgb(201, 167, 122);
+//   }
+
+//   #smiley {
+//     align-items: center;
+//     margin-top: 20px;
+//   }
+// }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
   background-color: white;
 }
+
 .mainLogo {
   margin-top: 50px;
   margin-left: 50px;
+
   &__p {
     margin-left: 80px;
     font-size: 2.5rem;
     margin-top: -50px;
   }
-  &__img__car {
+
+  &__img {
     margin-left: 100px;
     margin-top: auto;
   }
-  &__text__h1 {
+
+  &__title {
     margin-bottom: 40px;
     font-weight: 900;
     margin-left: 40px;
     margin-top: 80px;
     color: #1a9898;
   }
-  &__text__h2 {
+
+  &__text__heading {
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: bold;
     margin-left: 40px;
     color: #3f8484;
   }
-  &__text__p {
+
+  &__text__subheading {
     line-height: 2;
     font-size: 18px;
     margin-left: 40px;
     font-weight: 500;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  &__text__p {
+    margin-top: 10px;
   }
 }
+
 .page {
   width: 400px;
   height: 507px;
@@ -66,11 +261,11 @@ body {
   color: #333;
 }
 
-.city-selection {
+.citySelection {
   margin-top: 20px;
 }
 
-.city-selection label {
+.citySelection label {
   display: block;
   margin-bottom: 5px;
   color: #333;
@@ -78,7 +273,7 @@ body {
   font-size: 18px;
 }
 
-.city-selection select {
+.citySelection select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -86,31 +281,31 @@ body {
   font-size: 15px;
 }
 
-.vehicle-number {
+.vehicleNumber {
   margin-top: 20px;
   font-size: 18px;
 }
 
-.vehicle-number label {
+.vehicleNumber label {
   display: block;
   margin-bottom: 5px;
   color: #333;
   font-weight: bold;
 }
 
-.vehicle-number input {
+.vehicleNumber input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.parking-buttons {
+.parkingButtons {
   margin-top: 20px;
   text-align: center;
 }
 
-.parking-buttons button {
+.parkingButtons button {
   height: 50px;
   font-size: 20px;
   display: inline-block;
@@ -122,14 +317,15 @@ body {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  &:hover {
-    background-color: #bfc9d4;
-    color: #1a9898;
-    font-weight: bold;
-  }
 }
 
-.parking-buttons button:disabled {
+.parkingButtons button:hover {
+  background-color: #bfc9d4;
+  color: #1a9898;
+  font-weight: bold;
+}
+
+.parkingButtons button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
@@ -138,6 +334,7 @@ body {
   margin-top: 20px;
   text-align: center;
 }
+
 .timer__img {
   margin-left: 165px;
   margin-top: -79px;
@@ -155,29 +352,28 @@ body {
   margin-top: 50px;
 }
 
-.parking-info {
+.parkingInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+}
 
-  p {
-    text-align: center;
-    margin-bottom: 20px;
-    // font-size: large;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
+.parkingInfo p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
 
-  #thank-you {
-    text-align: center;
-    margin-top: 20px;
-    color: rgb(201, 167, 122);
-  }
+#thank-you {
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(201, 167, 122);
+}
 
-  #smiley {
-    align-items: center;
-    margin-top: 20px;
-  }
+#smiley {
+  align-items: center;
+  margin-top: 20px;
 }

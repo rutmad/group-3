@@ -17,8 +17,8 @@ class ParkingController {
 
     const register_button = document.getElementById("register_button");
     register_button!.addEventListener("click", () => {
-      this.addUser();
       this.parkingView.showPage("loginPage");
+      this.addUser();
     });
 
     const loginButton = document.getElementById("submitBtn");

@@ -12,14 +12,14 @@
   <body>
     <div class="mainLogo">
       <img
-        class="mainLogo__img__p"
+        class="mainLogo__img"
         src="./image/parking-garage-15.png"
         width="150px"
       />
-      <h1 class="mainLogo__p">arking</h1>
+      <h1 class="mainLogo__title">parking</h1>
       <div class="mainLogo__text">
-        <h1 class="mainLogo__text__h1">Parking in a click</h1>
-        <h3 class="mainLogo__text__h2">
+        <h1 class="mainLogo__text__heading">Parking in a click</h1>
+        <h3 class="mainLogo__text__subheading">
           Fast and convenient parking payment throughout the country
         </h3>
         <p class="mainLogo__text__p">
@@ -31,22 +31,28 @@
     </div>
 
     <div id="loginPage" class="page">
-      <div class="form-box login">
-        <h2>Login</h2>
+      <div class="formBox formBox--login">
+        <h2 class="formBox__title">Login</h2>
         <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <div class="inputBox">
+            <span class="inputBox__icon"
+              ><ion-icon name="mail"></ion-icon
+            ></span>
             <input id="username" type="username" required />
-            <label>username</label>
+            <label class="inputBox__label">username</label>
           </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <div class="inputBox">
+            <span class="inputBox__icon"
+              ><ion-icon name="lock-closed"></ion-icon
+            ></span>
             <input id="password" type="password" required />
-            <label>Password</label>
+            <label class="inputBox__label">Password</label>
           </div>
-          <div class="remember-forgot">
-            <label><input type="checkbox" />Remember me</label>
-            <a href="#">Forgot Password?</a>
+          <div class="rememberForgot">
+            <label class="rememberForgot__label"
+              ><input type="checkbox" />Remember me</label
+            >
+            <a href="#" class="rememberForgot__link">Forgot Password?</a>
           </div>
           <input id="submitBtn" type="submit" value="Login" class="btn" />
           <button type="button" id="goToRegister_button" class="btn">
@@ -57,37 +63,37 @@
       </div>
     </div>
     <div id="registrationPage" class="page" style="display: none">
-      <div class="form-box login">
+      <div class="formBox formBox--login">
         <form id="form" action="#">
-          <div class="input-box">
+          <div class="inputBox">
             <label for="user-name">User Name</label>
             <br />
             <input type="text" id="user-name" />
             <br />
           </div>
 
-          <div class="input-box">
+          <div class="inputBox">
             <label for="password">Password</label>
             <br />
             <input type="password" id="user-password" />
             <br />
           </div>
 
-          <div class="input-box">
+          <div class="inputBox">
             <label for="address">Address</label>
             <br />
             <input type="text" id="address" />
             <br />
           </div>
 
-          <div class="input-box">
+          <div class="inputBox">
             <label for="license-plate-number">License Plate Number</label>
             <br />
             <input type="number" id="license-plate-number" />
             <br />
           </div>
 
-          <div class="input-box">
+          <div class="inputBox">
             <label for="credit-card">Credit Card Number</label>
             <br />
             <input type="password" id="credit-card" />
@@ -111,7 +117,7 @@
       <div class="greeting">
         <p id="welcome-message"></p>
       </div>
-      <div class="city-selection">
+      <div class="citySelection">
         <label for="city">Select City:</label>
         <select id="city">
           <option value="" disabled selected></option>
@@ -127,11 +133,11 @@
           <option value="10">Modyin</option>
         </select>
       </div>
-      <div class="vehicle-number">
+      <div class="vehicleNumber">
         <label for="number">Vehicle Number:</label>
         <input type="text" id="number" />
       </div>
-      <div class="parking-buttons">
+      <div class="parkingButtons">
         <button id="start-parking">Start Parking</button>
         <button id="end-parking" disabled>End Parking</button>
       </div>
@@ -149,7 +155,7 @@
 
     <div id="parkingSummaryPage" class="page" style="display: none">
       <h1 id="summary">Parking Summary</h1>
-      <div class="parking-info">
+      <div class="parkingInfo">
         <p id="cost">Cost:</p>
         <p id="time">total Time:</p>
         <h2 id="thank-you">Thank you for using our service</h2>
