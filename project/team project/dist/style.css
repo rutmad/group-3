@@ -323,7 +323,8 @@ body {
   position: absolute;
   top: 65px;
 }
-.wrapper #parkingStyle {
+
+#parkingStyle {
   margin-top: 100px;
   border-radius: 50px;
   font-size: larger;
@@ -348,7 +349,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.wrapper #parkingStyle:hover {
+#parkingStyle:hover {
   background-color: #f9faf6;
   color: #999d9d;
   font-weight: bold;

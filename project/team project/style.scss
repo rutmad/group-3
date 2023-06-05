@@ -218,6 +218,7 @@ body {
   margin-top: 10px;
 }
 .inputBox {
+  // text-align: center;
   margin-top: 10px;
   &__label {
     text-align: center;
@@ -324,38 +325,39 @@ body {
 .wrapper {
   position: absolute;
   top: 65px;
-  #parkingStyle {
-    margin-top: 100px;
-    border-radius: 50px;
-    font-size: larger;
-    align-items: center;
+}
+#parkingStyle {
+  margin-top: 100px;
+  border-radius: 50px;
+  font-size: larger;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 120px;
+  height: 40px;
+  width: 130px;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e5d5bf;
+  color: #363434;
+  border-bottom: #333;
+  border-top: none;
+  font-weight: 800;
+  border-bottom: solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #f9faf6;
+    color: #999d9d;
+    font-weight: bold;
     text-align: center;
-    font-size: 15px;
-    align-items: center;
-    margin-top: 10px;
-    margin-left: 120px;
-    height: 40px;
-    width: 130px;
-    font-size: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e5d5bf;
-    color: #363434;
-    border-bottom: #333;
-    border-top: none;
-    font-weight: 800;
-    border-bottom: solid;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    &:hover {
-      background-color: #f9faf6;
-      color: #999d9d;
-      font-weight: bold;
-      text-align: center;
-    }
   }
 }
+
 .parkingPrice ul {
   list-style-position: inside;
   width: 600px;
