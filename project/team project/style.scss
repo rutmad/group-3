@@ -280,9 +280,10 @@ body {
     padding: 10px 20px;
     background-color: #e5d5bf;
     color: #363434;
-    border: #333;
+    border-bottom: #333;
+    border-top: none;
     font-weight: 800;
-    border-style: solid;
+    border-bottom: solid;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
