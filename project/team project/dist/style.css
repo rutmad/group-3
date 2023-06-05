@@ -202,8 +202,7 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
-.container__box1__p,
-.container__box2__p {
+.container__box1__p, .container__box2__p {
   font-weight: 700;
   text-align: center;
 }
@@ -318,4 +317,9 @@ body {
 }
 .btn-menu .parkingPriceB {
   margin-left: 35px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 65px;
 }
