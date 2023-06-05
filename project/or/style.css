@@ -6,21 +6,43 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: white;
+}
+
+.mainLogo {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.mainLogo__p {
+  margin-left: 80px;
+  font-size: 2.5rem;
+  margin-top: -40px;
 }
 
 .page {
-  max-width: 500px;
-  margin: 0 auto;
+  width: 400px;
+  height: 507px;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  margin: 30px auto;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  -o-border-image: initial;
+     border-image: initial;
+  border-radius: 20px;
 }
 
 .logo {
+  margin-top: 30px;
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   color: #333;
 }
 
@@ -33,6 +55,7 @@ body {
   margin-bottom: 5px;
   color: #333;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .city-selection select {
@@ -40,10 +63,12 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  font-size: 15px;
 }
 
 .vehicle-number {
   margin-top: 20px;
+  font-size: 18px;
 }
 
 .vehicle-number label {
@@ -66,14 +91,21 @@ body {
 }
 
 .parking-buttons button {
+  height: 50px;
+  font-size: 20px;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #1a9898;
   color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.parking-buttons button:hover {
+  background-color: #bfc9d4;
+  color: #1a9898;
+  font-weight: bold;
 }
 
 .parking-buttons button:disabled {
@@ -86,7 +118,13 @@ body {
   text-align: center;
 }
 
+.timer__img {
+  margin-left: 165px;
+  margin-top: -79px;
+}
+
 .timer p {
   font-weight: bold;
   color: #333;
-} /*# sourceMappingURL=style.css.map */
+  margin-right: 68px;
+}/*# sourceMappingURL=style.css.map */
