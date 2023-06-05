@@ -281,7 +281,7 @@ body {
 }
 
 .btn-menu {
-  margin-top: 100px;
+  margin-top: 20px;
   border-radius: 50px;
   font-size: larger;
 }
@@ -317,6 +317,14 @@ body {
 }
 .btn-menu .parkingPriceB {
   margin-left: 35px;
+}
+
+#feedback {
+  margin: auto;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .wrapper {
