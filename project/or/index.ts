@@ -1,0 +1,1 @@
+const parkingController = new ParkingController();
