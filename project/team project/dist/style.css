@@ -211,7 +211,6 @@ body {
   text-align: center;
   font-size: 30px;
   margin-bottom: 20px;
-  margin-top: 10px;
 }
 
 .inputBox {
@@ -230,6 +229,13 @@ body {
   font-size: 20px;
   margin-right: 23px;
   margin-bottom: 70px;
+}
+
+.inputBox-registr {
+  font-weight: 500;
+  font-size: 15px;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 .btn-login,
@@ -260,8 +266,8 @@ body {
 .btn-register-rpage {
   align-items: center;
   position: absolute;
-  bottom: 15px;
-  left: 240px;
+  bottom: -40px;
+  left: 130px;
   height: 50px;
   width: 120px;
   font-size: 20px;
